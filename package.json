@@ -1,0 +1,78 @@
+{
+    "name": "IEEE Computer Society-VIT Student Chapter - Website",
+    "version": "0.0.1",
+    "description": "The website for the IEEE Computer Society-VIT Student Chapter",
+    "bugs": {
+        "url": "https://github.com/IEEECS-VIT/IEEECS-VIT-Website/issues",
+        "email": "neelam.aneesh@gmail.com"
+    },
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "contributors": [
+        {
+            "name": "Aneesh Neelam",
+            "email": "neelam.aneesh@gmail.com"
+        },
+        {
+            "name": "Kashish Singhal",
+            "email": "singhal2.kashish@gmail.com"
+        },
+        {
+            "name": "Tannika Aggarwal",
+            "email": ""
+        },
+        {
+            "name": "Ashish Sareen",
+            "email": ""
+        },
+        {
+            "name": "Ayush Agarwal",
+            "email": ""
+        },
+        {
+            "name": "Diksha Jain",
+            "email": ""
+        },
+        {
+            "name": "Mudit Saraf",
+            "email": ""
+        },
+        {
+            "name": "Reetuparna Mukherjee",
+            "email": ""
+        },
+        {
+            "name": "Shivam Mathur",
+            "email": "burnualive@hotmail.com"
+        },
+        {
+            "name": "Somya Mehta",
+            "email": ""
+        }
+    ],
+    "dependencies": {
+        "express": "~4.2.0",
+        "static-favicon": "~1.0.0",
+        "morgan": "~1.0.0",
+        "cookie-parser": "~1.0.1",
+        "body-parser": "~1.0.0",
+        "debug": "~0.7.4",
+        "ejs": "~0.8.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/IEEECS-VIT/IEEECS-VIT-Website.git"
+    },
+    "license": "GPL-3.0+",
+    "licenses": [
+        {
+            "type": "GPL-3.0+",
+            "url": "https://www.gnu.org/licenses/gpl-3.0-standalone.html"
+        }
+    ],
+    "engines": {
+        "node": "0.10.x"
+    }
+}
