@@ -1,0 +1,127 @@
+body {
+     background-image:url('shadygamer.jpg');
+     width: 1160px;
+     margin: 0  auto;
+     padding: 10px 10px 0 0;
+ }
+#nav {
+
+    width: 1260px;
+    height:40px;
+    position: relative;
+    font-family:sans-serif;
+    font-size: h2;
+    color:white;
+    padding: 10px 10px 2px 2px;
+    margin:0 auto;
+    text-align: center;
+    border-radius: 0.5em;
+    border: 1px solid grey;
+}
+
+#tab {
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+    background: #222227/*rgba(0,0,102,0.7) rgba( 0, 172, 237,0.2)*/;
+    width:960px;
+    height:30px;
+    position: relative;
+    margin:0;
+    border-radius:0.5em;
+    text-shadow: 1px 1px 1px black;
+    border: 1px solid rgba(0,0,0,0.15);font-size: h2;
+    /*box-shadow: inset 0 -40px 40px rgba(0, 172, 237,0),inset 0 15px 30px rgba(255,255,255,0.3),inset 0 10px 10px rgba(255,255,255,0.2),inset 0 10px 25px rgba(255,255,255,0.25),inset 0 15px 30px rgba(251,251,251,0.1),inset 0 1px rgba(255,255,255,0.2),inset 0 -15px 30px rgba(255,255,255,0.3);
+    */z-index:1;
+}
+#tab #box {
+    margin:0 0 0 140px;
+    text-align:center;
+    padding:0.3em;
+    width:auto;
+    position:relative;
+    color:rgba(0, 172, 237,0.3);
+    z-index:2;
+    font-size: h2;
+}
+
+#tab #box .active{
+    top:-2px;
+}
+
+#tab #box a{
+    text-decoration: none;
+    color: white;
+
+}
+#tab #box li{
+    font-family: Garamond;
+    color: whitesmoke;
+    font-size: h2;
+    float:left;
+    display: inline-block;
+    position:relative;
+    padding:0;
+    border-right:1px rgba(0,0,0,0.25) solid;
+
+    height:auto;
+    padding-left:60px;
+    padding-right:50px;
+    /*border-right:1px rgba(0, 172, 237,0.3) solid;*/
+}
+#space{
+   width: auto;
+   height:20px;
+
+}
+#panel{
+    width:20%;
+    border-radius: 20%;
+    border-color:#222227;
+}
+#panel ul{
+    list-style: none;
+}
+#panel ul li{
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: h2;
+    background: #222227;
+    margin-bottom: 5px;
+    font-family: Verdana;
+    color:whitesmoke;
+    border: 1px solid #222227;
+}
+#techcrunch_live
+{
+
+    float:right;
+    font-size:0.8em;
+    width:300px;
+    height: 42em;
+    color:black;
+    margin:0;
+    margin-left:2.168%;
+    margin-top:10px;
+    padding:0;
+
+    font-weight:bold;
+
+    border-radius:5px;
+}
+#techcrunch_live a{
+    text-decoration: none;
+}
+#photos{
+    width:960px;
+    heght:60px;
+    margin-top:100px;
+}
+#photos ul{
+    list-style: none;
+}
+#photos ul li{
+    diplay:inline;
+    height:80px;
+    width:100px;
+}
