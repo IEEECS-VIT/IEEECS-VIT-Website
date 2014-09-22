@@ -35,4 +35,4 @@ Please report any bugs or issues [here](https://github.com/IEEECS-VIT/IEEECS-VIT
 * A valid "SECRET_KEY" string in os.environ for better security (Optional)
 
 #### Custom buildpack for Heroku
-* Set BUILDPACK_URL in os.environ as [this](https://github.com/aneesh-neelam/heroku-buildpack-python-bower.git)
+* Set BUILDPACK_URL in os.environ as [this](https://github.com/papaeye/heroku-buildpack-python-bower.git)
