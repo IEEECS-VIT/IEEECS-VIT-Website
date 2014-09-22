@@ -9,16 +9,13 @@
 #
 
 # These files are text and should be normalized (Convert crlf => lf)
-*.php text
+*.py text
 *.css text
 *.js text
 *.htm text
 *.html text
 *.xml text
 *.txt text
-*.ini text
-*.inc text
-.htaccess text
 *.md text
 
 # These files are binary and should be left untouched
