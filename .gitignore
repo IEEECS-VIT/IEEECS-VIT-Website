@@ -65,4 +65,3 @@ staticfiles/
 static/bower_components
 
 # Django database migrations
-migrations/
