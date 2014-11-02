@@ -6,7 +6,7 @@ class Member(models.Model):
     Name = models.CharField(max_length=40, null=False)
     Email = models.EmailField(max_length=75, null=False)
     Phone = models.CharField(max_length=10, null=False)
-    Hostel = models.CharField(max_length=5)
+    Hostel = models.CharField(max_length=5, null=True)
     Position = models.CharField(max_length=20, null=False, default='Core Member')
 
     def __str__(self):
