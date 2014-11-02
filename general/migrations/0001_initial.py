@@ -10,9 +10,9 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Events',
+            name='Event',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', auto_created=True, serialize=False, primary_key=True)),
+                ('id', models.AutoField(serialize=False, auto_created=True, verbose_name='ID', primary_key=True)),
                 ('Name', models.CharField(max_length=20)),
                 ('From', models.DateTimeField()),
                 ('To', models.DateTimeField()),
@@ -24,13 +24,13 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='Members',
+            name='Member',
             fields=[
-                ('RegisterNumber', models.CharField(max_length=9, serialize=False, primary_key=True)),
+                ('RegisterNumber', models.CharField(serialize=False, max_length=9, primary_key=True)),
                 ('Name', models.CharField(max_length=40)),
                 ('Email', models.EmailField(max_length=75)),
                 ('Phone', models.CharField(max_length=10)),
-                ('Hostel', models.CharField(max_length=5)),
+                ('Hostel', models.CharField(max_length=5, null=True)),
                 ('Position', models.CharField(max_length=20, default='Core Member')),
             ],
             options={
