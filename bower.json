@@ -1,0 +1,23 @@
+{
+    "name": "IEEECS-VIT-Website",
+    "version": "0.0.1",
+    "homepage": "https://github.com/IEEECS-VIT/IEEECS-VIT-Website",
+    "authors": [
+        "aneesh-neelam <neelam.aneesh@gmail.com>"
+    ],
+    "description": "The Website for the IEEE CS - VIT Student Chapter",
+    "main": "manage.py",
+    "moduleType": [
+        "globals"
+    ],
+    "license": "GPL-3.0+",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "static/bower_components",
+        "test",
+        "tests"
+    ]
+}
