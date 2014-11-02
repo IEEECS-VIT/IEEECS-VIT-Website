@@ -1,9 +1,11 @@
 {
     "name": "IEEECS-VIT-Website",
     "version": "0.0.1",
-    "homepage": "https://github.com/IEEECS-VIT/IEEECS-VIT-Website",
+    "homepage": "http://ieeecsvit.herokuapp.com/",
     "authors": [
-        "aneesh-neelam <neelam.aneesh@gmail.com>"
+        "Aneesh Neelam <neelam.aneesh@gmail.com>",
+        "Kashish Singhal <singhal2.kashish@gmail.com>",
+        "Kunal Nagpal <kunagpal@gmail.com>"
     ],
     "description": "The Website for the IEEE CS - VIT Student Chapter",
     "main": "manage.py",
@@ -11,13 +13,21 @@
         "globals"
     ],
     "license": "GPL-3.0+",
+    "licenses": [
+        {
+            "type": "GPL-3.0+",
+            "url": "https://www.gnu.org/licenses/gpl-3.0-standalone.html"
+        }
+    ],
     "private": true,
     "ignore": [
         "**/.*",
         "node_modules",
         "bower_components",
-        "static/bower_components",
-        "test",
-        "tests"
-    ]
+        "static/bower_components"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/IEEECS-VIT/IEEECS-VIT-Website.git"
+    }
 }

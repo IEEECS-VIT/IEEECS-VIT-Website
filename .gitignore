@@ -63,3 +63,6 @@ staticfiles/
 .bower-cache
 .bower-registry
 static/bower_components
+
+# Django database migrations
+migrations/
