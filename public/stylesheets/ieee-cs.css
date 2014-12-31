@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+section {
+    min-height: 100%;
+}
+
+#go-top {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
