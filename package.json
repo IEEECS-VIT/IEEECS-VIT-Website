@@ -4,7 +4,7 @@
     "description": "The website for the IEEE Computer Society-VIT Student Chapter",
     "bugs": {
         "url": "https://github.com/IEEECS-VIT/IEEECS-VIT-Website/issues",
-        "email": "neelam.aneesh@gmail.com"
+        "email": "ieeecs@vit.ac.in"
     },
     "private": true,
     "scripts": {
@@ -20,28 +20,12 @@
             "email": "singhal2.kashish@gmail.com"
         },
         {
-            "name": "Tannika Aggarwal",
-            "email": ""
-        },
-        {
-            "name": "Ashish Sareen",
-            "email": ""
-        },
-        {
             "name": "Ayush Agarwal",
-            "email": ""
-        },
-        {
-            "name": "Diksha Jain",
-            "email": ""
-        },
-        {
-            "name": "Mudit Saraf",
-            "email": ""
+            "email": "ayush.agarwal2013@vit.ac.in"
         },
         {
             "name": "Reetuparna Mukherjee",
-            "email": ""
+            "email": "reetuparna.mukherjee2013@vit.ac.in"
         },
         {
             "name": "Shivam Mathur",
@@ -49,7 +33,31 @@
         },
         {
             "name": "Somya Mehta",
-            "email": ""
+            "email": "somya.mehta2013@vit.ac.in"
+        },
+        {
+            "name": "Harsh Saxena",
+            "email": "harsh.saxena2013@vit.ac.in"
+        },
+        {
+            "name": "Harsh Malik",
+            "email": "harsh.malik2013@vit.ac.in"
+        },
+        {
+            "name": "Jill Padalia",
+            "email": "jill.padalia2013@vit.ac.in"
+        },
+        {
+            "name": "Udisha Madnani",
+            "email": "udisha.madnani2013@vit.ac.in"
+        },
+        {
+            "name": "Kiran Baktha",
+            "email": "kiran.baktha2013@vit.ac.in"
+        },
+        {
+            "name": "Gunta Vaishnavi",
+            "email": "vaishnavi.gunta2013@vit.ac.in"
         }
     ],
     "dependencies": {
@@ -59,7 +67,8 @@
         "cookie-parser": "~1.3.2",
         "body-parser": "~1.5.2",
         "debug": "~1.0.4",
-        "ejs": "~1.0.0"
+        "ejs": "~1.0.0",
+        "universal-analytics": "~0.3.6"
     },
     "repository": {
         "type": "git",
