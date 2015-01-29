@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PyCharm
 .idea/
 
@@ -66,3 +67,7 @@ static/bower_components
 
 # Django database migrations
 migrations/
+=======
+# WebStorm
+.idea/
+>>>>>>> origin/legacy

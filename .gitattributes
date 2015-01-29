@@ -9,14 +9,24 @@
 #
 
 # These files are text and should be normalized (Convert crlf => lf)
+<<<<<<< HEAD
 *.py text
+=======
+*.php text
+>>>>>>> origin/legacy
 *.css text
 *.js text
 *.htm text
 *.html text
 *.xml text
 *.txt text
+<<<<<<< HEAD
 *.md text
+=======
+*.ini text
+*.inc text
+.htaccess text
+>>>>>>> origin/legacy
 
 # These files are binary and should be left untouched
 # (binary is a macro for -text -diff)
