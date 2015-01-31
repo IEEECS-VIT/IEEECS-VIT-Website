@@ -4,8 +4,17 @@ html {
 
 body {
     height: 100%;
+    background: rgba(0, 0, 0,0.9);
 }
+.jumbotron{
+    background: none;
+    font-family: Menlo!important;
 
+}
+.jumbotron h1{
+    color: white !important;
+
+}
 section {
     min-height: 100%;
 }
