@@ -24,3 +24,18 @@ section {
     right: 0;
     bottom: 0;
 }
+
+.img-70{
+    width: 70%;
+    height: 10%;
+}
+#navbar ul{
+    width: 100%;
+    text-align: center;
+}
+#navbar ul li{
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    min-width: 16%;
+}
