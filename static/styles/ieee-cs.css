@@ -9,10 +9,15 @@ body {
 .jumbotron{
     background: none;
     font-family: Menlo!important;
+    text-align: center;
 
 }
 .jumbotron h1{
     color: white !important;
+
+}
+.jumbotron h3{
+    color: rgba(255,255,255,0.8) !important;
 
 }
 section {
