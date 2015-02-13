@@ -20,6 +20,11 @@ body {
     color: rgba(255,255,255,0.8) !important;
 
 }
+#team .jumbotron,#history .jumbotron{
+    padding-top: 0 !important;
+    padding-bottom: 0;
+
+}
 #team{
     text-align: center;
 }
@@ -57,4 +62,8 @@ section {
     margin-right: auto;
     width: auto;
     min-width: 16%;
+}
+#contact img{
+    width: 20%;
+    border-radius: 10px;
 }
