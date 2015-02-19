@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'general',
     'internal',
+    'twitter_bootstrap',
 )
 
 MIDDLEWARE_CLASSES = (

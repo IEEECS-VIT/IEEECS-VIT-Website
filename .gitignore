@@ -68,14 +68,11 @@ static/bower_components
 migrations/
 =======
 # WebStorm
-.idea/
-=======
 #Webstorm
 .idea
 
 # Logs
 logs
-*.log
 
 # Runtime data
 pids
@@ -103,5 +100,4 @@ build/Release
 ehthumbs.db
 Icon?
 thumbs.db
-Thumbs.db
 
