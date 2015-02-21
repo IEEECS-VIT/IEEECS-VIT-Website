@@ -16,12 +16,6 @@ Please report any bugs or issues [here](https://github.com/IEEECS-VIT/IEEECS-VIT
 
     $ pip install -r requirements.txt
 
-###### Install Node.js 0.10.x
-###### Install Bower components
-
-    # npm install -g bower
-    $ bower install
-
 ###### Django Task - Collect static files
 
     $ python manage.py collectstatic
