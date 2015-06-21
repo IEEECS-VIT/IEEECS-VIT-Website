@@ -4,19 +4,65 @@
     <meta charset="UTF-8">
     <title>Begin</title>
     <link rel="stylesheet" type="text/css" href="../static/styles/hud.css" />
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-
-
-
-
 <div id="box">
     <span class="txt">IEEE Computer Society</span><br/>
     <div class="logo"></div>
     <span class="txt" contenteditable spellcheck="false">Coming Soon</span>
+    <br/>
+    <br/>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-1"> <img src=../static/images/splash/open-quote.png height=50px width=50px align="left"></div>
+<div class="col-md-10"><p id="quote"></p></div>
+<div class="col-md-1"><img src=../static/images/splash/close-quote.png height=50px width=50px align="right"></div>
 </div>
+</div>
+</div>
+</div>
+<script>
+        var text = new Array();
+         text[0] = "Our time is now";
+         text[1] = "We do what no one else can";
+         text[2] = "Computing runs through our veins";
+         text[3] = "You haven't seen good until you've seen IEEE CS";
+         text[4] = "There are two kinds of people in the world. We are the third.";
+         text[5] = "To err is human - and to blame it on a computer is even more so.";
+         text[6] = "Think? Why think! We have computers to do that for us.";
+         text[7] = "The community for technology leaders";
+         text[8] = "One thing you should know about us, we are unexpectedly good with computers.";
+         text[9] = "IEEE-CS, Inspiring Innovation.";
+         text[10] = "IEEE CS - Driven By Demographics";
+         text[11] = "There's no equal.";
+         text[12] = "Delineating computers,from C to S.";
+         text[13] = "We make it simple.We keep it simple.";
+         text[14] = "I had a dream… and there were 1’s and 0’s everywhere";
+         text[15] = "Roses are #FF0000, skies are #0000FF";
+         text[16] = "Error 195: This tagline is encryted and can be viewed only by geeks";
+         text[17] = "We make IT happen";
+         text[18] = "Technology community for better tomorrow";
+         text[19] = "IEEE CS-inspire,impact,educate for better future";
+         text[20] = "Computing to discover";
+         text[21] = "Talk is cheap.Show me the code";
 
+         var i=Math.random();
+         i = i*22;
+         i = Math.floor(i);
 
+         var current = text[i];
 
+         document.getElementById("quote").innerHTML = current;
+</script>
 </body>
 </html>
