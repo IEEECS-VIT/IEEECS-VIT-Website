@@ -32,37 +32,30 @@
 </div>
 </div>
 <script>
-        var text = new Array();
-         text[0] = "Our time is now";
-         text[1] = "We do what no one else can";
-         text[2] = "Computing runs through our veins";
-         text[3] = "You haven't seen good until you've seen IEEE CS";
-         text[4] = "There are two kinds of people in the world. We are the third.";
-         text[5] = "To err is human - and to blame it on a computer is even more so.";
-         text[6] = "Think? Why think! We have computers to do that for us.";
-         text[7] = "The community for technology leaders";
-         text[8] = "One thing you should know about us, we are unexpectedly good with computers.";
-         text[9] = "IEEE-CS, Inspiring Innovation.";
-         text[10] = "IEEE CS - Driven By Demographics";
-         text[11] = "There's no equal.";
-         text[12] = "Delineating computers,from C to S.";
-         text[13] = "We make it simple.We keep it simple.";
-         text[14] = "I had a dream… and there were 1’s and 0’s everywhere";
-         text[15] = "Roses are #FF0000, skies are #0000FF";
-         text[16] = "Error 195: This tagline is encryted and can be viewed only by geeks";
-         text[17] = "We make IT happen";
-         text[18] = "Technology community for better tomorrow";
-         text[19] = "IEEE CS-inspire,impact,educate for better future";
-         text[20] = "Computing to discover";
-         text[21] = "Talk is cheap.Show me the code";
-
-         var i=Math.random();
-         i = i*22;
-         i = Math.floor(i);
-
-         var current = text[i];
-
-         document.getElementById("quote").innerHTML = current;
+        var text = [
+         "Our time is now",
+         "We do what no one else can",
+         "Computing runs through our veins",
+         "You haven't seen good until you've seen IEEE CS",
+         "There are two kinds of people in the world. We are the third.",
+         "To err is human - and to blame it on a computer is even more so.",
+         "Think? Why think! We have computers to do that for us.",
+         "The community for technology leaders",
+         "One thing you should know about us, we are unexpectedly good with computers.",
+         "IEEE CS, Inspiring Innovation.",
+         "IEEE CS - Driven By Demographics",
+         "There's no equal.",
+         "Delineating computers,from C to S.",
+         "We make it simple. We keep it simple.",
+         "I had a dream… and there were 1’s and 0’s everywhere",
+         "Roses are #FF0000, skies are #0000FF",
+         "Error 195: This tagline is encryted and can be viewed only by geeks",
+         "We make IT happen",
+         "Technology community for better tomorrow",
+         "Computing to discover",
+         "Talk is cheap. Show me the code"
+        ];
+         document.getElementById("quote").innerHTML = text[Math.floor(Math.random() * 22)];
 </script>
 </body>
 </html>
