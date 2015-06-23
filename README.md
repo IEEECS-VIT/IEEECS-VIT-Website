@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/IEEECS-VIT/IEEECS-VIT-Website.png?label=ready&title=Ready)](https://waffle.io/IEEECS-VIT/IEEECS-VIT-Website)
 IEEE CS-VIT - Website
 =====================
 
