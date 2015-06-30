@@ -20,15 +20,21 @@
         }
             .wrapper{
         width: 100%;
+        position:relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
         }
-        #image-title{
+        #atext, #btext, #ctext, #dtext, #etext, #ftext{
         display:none;
         font-family: 'Ubuntu', sans-serif;
         font-size: 25px;
         color: #00CCFF;
         }
-        li:hover #image-title{
-        display:block;
+
+        #imga:hover #atext{
+        display:inline;
         }
     </style>
 </head>
@@ -39,59 +45,51 @@
         <div class="title"><h1>IEEE CS</h1></div>
     </div>-->
   <div class="col-md-12">
-    <div class="accordian events" style="margin-top: 50px; margin-bottom: 0px;">
+    <div class="accordian events">
 	<ul>
+        <div id="imga">
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/gpl/21.jpg" height="680px" width="auto"/>
 			</a>
-             <span id="image-title">
-                 GraVITas Premier League
-             </span>
 		</li>
+        </div>
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/jumble/5.jpg" height="680px" width="auto"/>
 			</a>
-             <span id="image-title">
-                 Jumble Coding
-             </span>            
 		</li>
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/ftp/10.jpg" height="680px" width="auto"/>
-			</a>
-             <span id="image-title">
-                 FTP Maze
-             </span>            
+			</a>            
 		</li>
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/mozilla/5.jpg" height="680px" width="auto"/>
-			</a>
-             <span id="image-title">
-                 Mozilla Firefox OS App Days
-             </span>            
+			</a>          
 		</li>
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/mozilla/19.jpg" height="680px" width="auto"/>
-			</a>
-             <span id="image-title">
-                 Live Monopoly
-             </span>            
+			</a> 
 		</li>
         <li>
             <a href="#">
                 <img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/gpl/2.jpg" height="680px" width="auto"/>
-            </a>
-             <span id="image-title">
-                 GraVITas Premier League
-             </span>            
+            </a>          
         </li>
         </ul>
     </div>
-
+    </div>
+    <div>
+          <span id="atext">GraVITas Premier League</span>
+          <span id="btext">Jumble Coding</span>
+          <span id="ctext">FTP Maze</span>
+          <span id="dtext">Mozilla Firefox OS App Days</span>
+          <span id="etext">Live Monopoly</span>
+          <span id="ftext">GraVITas Premier League</span>
+    </div>
   <!--<div class="col-md-12">
     <div class="col-md-1"> <img src=../static/images/splash/open-quote.png height=50px width=50px align="left"></div>
     <div class="col-md-10"><p id="quote"></p></div>
