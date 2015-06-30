@@ -3,6 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>IEEE CS</title>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="../static/styles/hud.css" />
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -19,6 +21,15 @@
             .wrapper{
         width: 100%;
         }
+        #image-title{
+        display:none;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 25px;
+        color: #00CCFF;
+        }
+        li:hover #image-title{
+        display:block;
+        }
     </style>
 </head>
 
@@ -28,55 +39,55 @@
         <div class="title"><h1>IEEE CS</h1></div>
     </div>-->
   <div class="col-md-12">
-    <div class="accordian events" style="margin-top: 0px; margin-bottom: 0px;">
+    <div class="accordian events" style="margin-top: 50px; margin-bottom: 0px;">
 	<ul>
 		<li>
-			<div class="image_title">
-				<a href="#">GraVITas Premier League</a>
-			</div>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/gpl/21.jpg" height="680px" width="auto"/>
 			</a>
+             <span id="image-title">
+                 GraVITas Premier League
+             </span>
 		</li>
 		<li>
-			<div class="image_title">
-				<a href="#">Jumble Coding</a>
-			</div>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/jumble/5.jpg" height="680px" width="auto"/>
 			</a>
+             <span id="image-title">
+                 Jumble Coding
+             </span>            
 		</li>
 		<li>
-			<div class="image_title">
-				<a href="#">FTP Maze</a>
-			</div>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/ftp/10.jpg" height="680px" width="auto"/>
 			</a>
+             <span id="image-title">
+                 FTP Maze
+             </span>            
 		</li>
 		<li>
-			<div class="image_title">
-				<a href="#">Live Monopoly 2014</a>
-			</div>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/mozilla/5.jpg" height="680px" width="auto"/>
 			</a>
+             <span id="image-title">
+                 Mozilla Firefox OS App Days
+             </span>            
 		</li>
 		<li>
-			<div class="image_title">
-				<a href="#">Mozilla Firefox OS</a>
-			</div>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/mozilla/19.jpg" height="680px" width="auto"/>
 			</a>
+             <span id="image-title">
+                 Live Monopoly
+             </span>            
 		</li>
         <li>
-            <div class="image_title">
-                <a href="#">GraVITas Premier League</a>
-            </div>
             <a href="#">
                 <img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/gpl/2.jpg" height="680px" width="auto"/>
             </a>
+             <span id="image-title">
+                 GraVITas Premier League
+             </span>            
         </li>
         </ul>
     </div>
