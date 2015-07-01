@@ -24,19 +24,63 @@
         top: 50%;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+        transform: translateY(+5%);
         }
         #atext, #btext, #ctext, #dtext, #etext, #ftext{
-        display:none;
+        display:none;    
         font-family: 'Ubuntu', sans-serif;
         font-size: 25px;
         color: #00CCFF;
+        }
+        #text{
+            text-align: center;
         }
 
         #imga:hover #atext{
         display:inline;
         }
     </style>
+    <script>
+    $(document).ready(function(){
+    $("#imga").mouseleave(function(){
+        $("#atext").hide();
+    });
+    $("#imga").mouseenter(function(){
+        $("#atext").show();
+    });
+        $("#imgb").mouseleave(function(){
+        $("#btext").hide();
+    });
+    $("#imgb").mouseenter(function(){
+        $("#btext").show();
+    });
+        $("#imgc").mouseleave(function(){
+        $("#ctext").hide();
+    });
+    $("#imgc").mouseenter(function(){
+        $("#ctext").show();
+    });
+        $("#imgd").mouseleave(function(){
+        $("#dtext").hide();
+    });
+    $("#imgd").mouseenter(function(){
+        $("#dtext").show();
+    });
+        $("#imge").mouseleave(function(){
+        $("#etext").hide();
+    });
+    $("#imge").mouseenter(function(){
+        $("#etext").show();
+    });
+        $("#imgf").mouseleave(function(){
+        $("#ftext").hide();
+    });
+    $("#imgf").mouseenter(function(){
+        $("#ftext").show();
+    });
+
+});
+    </script>
 </head>
 
 <body>
@@ -54,35 +98,45 @@
 			</a>
 		</li>
         </div>
+        <div id="imgb">
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/jumble/5.jpg" height="680px" width="auto"/>
 			</a>
 		</li>
+        </div>
+        <div id="imgc">
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/ftp/10.jpg" height="680px" width="auto"/>
 			</a>            
 		</li>
+        </div>
+        <div id="imgd">
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/mozilla/5.jpg" height="680px" width="auto"/>
 			</a>          
 		</li>
+        </div>
+        <div id="imge">
 		<li>
 			<a href="#">
 				<img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/mozilla/19.jpg" height="680px" width="auto"/>
 			</a> 
 		</li>
+        </div>
+        <div id="imgf">
         <li>
             <a href="#">
                 <img class="images" src="http://res.cloudinary.com/design-team/image/upload/gravitas/2014/gpl/2.jpg" height="680px" width="auto"/>
             </a>          
         </li>
+        </div>
         </ul>
     </div>
     </div>
-    <div>
+    <div id="text">
           <span id="atext">GraVITas Premier League</span>
           <span id="btext">Jumble Coding</span>
           <span id="ctext">FTP Maze</span>
