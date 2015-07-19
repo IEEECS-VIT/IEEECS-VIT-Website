@@ -1,0 +1,21 @@
+@fontface{
+	font-family: LiberationSans; 
+	src: url('../fonts/liberationSans/LiberationSans-Regular.ttf');
+}
+
+@fontface{
+	font-family: SpringSteel;
+	src: url('../fonts/springSteel/SpringSteel-lig.otf');
+}
+
+h3{
+ 	font-family: SpringSteel,sans-serif; 
+}
+
+h1{
+	font-family: LiberationSans,sans-serif;
+}
+
+h4{
+	font-family: SpringSteel,sans-serif;
+}
