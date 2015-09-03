@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
     <link rel="stylesheet" href="../static/styles/fonts.css" />
+    <link rel="stylesheet" href="../static/styles/indexPage.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -22,7 +23,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <nav class="nav navbar navbar-inverse navbar-fixed-top">
+    <nav class="nav navbar navbar-default navbar-inverse navbar-fixed-top">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="icon-bar"></span>
@@ -74,23 +75,7 @@
         <br>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-                <li data-target="#myCarousel" data-slide-to="4"></li>
-                <li data-target="#myCarousel" data-slide-to="5"></li>
-                <li data-target="#myCarousel" data-slide-to="6"></li>
-                <li data-target="#myCarousel" data-slide-to="7"></li>
-                <li data-target="#myCarousel" data-slide-to="8"></li>
-                <li data-target="#myCarousel" data-slide-to="9"></li>
-                <li data-target="#myCarousel" data-slide-to="10"></li>
-                <li data-target="#myCarousel" data-slide-to="11"></li>
-                <li data-target="#myCarousel" data-slide-to="12"></li>
-                <li data-target="#myCarousel" data-slide-to="13"></li>
-                <li data-target="#myCarousel" data-slide-to="14"></li>
-            </ol>
+
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
@@ -200,16 +185,34 @@
                     </div>
                 </div>
             </div>
-
+            <div class="carousel-controls">
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <a class="left carousel-control" id="left" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+                <li data-target="#myCarousel" data-slide-to="7"></li>
+                <li data-target="#myCarousel" data-slide-to="8"></li>
+                <li data-target="#myCarousel" data-slide-to="9"></li>
+                <li data-target="#myCarousel" data-slide-to="10"></li>
+                <li data-target="#myCarousel" data-slide-to="11"></li>
+                <li data-target="#myCarousel" data-slide-to="12"></li>
+                <li data-target="#myCarousel" data-slide-to="13"></li>
+                <li data-target="#myCarousel" data-slide-to="14"></li>
+            </ol>
+            <a class="right carousel-control" id="right" href="#myCarousel" role="button" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+            </div>
         </div>
     </div>
 </div>
