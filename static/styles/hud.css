@@ -33,11 +33,11 @@ default width = 800/5 = 160px;
 */
 
 .accordian {
-	width: 100%; height: 100%;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
-
 	/*Time for some styling*/
-	margin: 0px auto;
+	margin: 0 auto;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
 	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
@@ -55,13 +55,10 @@ default width = 800/5 = 160px;
 	display: block;
 	width: 160px;
 	float: left;
-
 	border-left: 1px solid #888;
-
 	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
-
 	/*Transitions to give animation effect*/
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -71,11 +68,14 @@ default width = 800/5 = 160px;
 }
 
 /*Reduce with of un-hovered elements*/
-.accordian ul:hover li {width: 40px;}
+.accordian ul:hover li {
+	width: 40px;
+}
 /*Lets apply hover effects now*/
 /*The LI hover style should override the UL hover style*/
-.accordian ul li:hover {width: 900px;}
-
+.accordian ul li:hover {
+	width: 900px;
+}
 
 .accordian li img {
 	display: block;
@@ -86,6 +86,5 @@ default width = 800/5 = 160px;
 	background: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	left: 0; bottom: 0;
-width: 640px;
-
+	width: 640px;
 }
