@@ -17,5 +17,12 @@ $(document).ready(function() {
         $("#2015").fadeOut();
         $("#2016").slideToggle("slow");
     });
+    $("#date6").click(function(){
+       $("#2014").fadeOut();
+        $("#2015").fadeOut();
+        $("#2016").fadeOut();
+        $("#2017").slideToggle("slow");
+
+    });
 
 });
