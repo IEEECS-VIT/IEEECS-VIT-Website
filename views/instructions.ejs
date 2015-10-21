@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Register</title>
+    <script src="javascript/prefix-free.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet"/>
+    <link rel='stylesheet' href='/stylesheets/register_style.css' />
+
+    <style media="screen">
+      .photo{
+        max-height: 150px;
+      }
+    </style>
+  </head>
+  <body >
+    <section class="main-container" id="main-container" >
+      <main>
+        <header> <h1><img height="42"src="http://res.cloudinary.com/gpl/general/ieeecs.png" class="photo img-circle"/> <br>
+           Core Committee <br>
+            Selections <br>
+             <small>Round 1</small>
+           </h1>
+
+         </header>
+
+
+        <% if(locals.hasOwnProperty('error')){ %>
+          <uib-alert type="danger" >  <%=error%>  </uib-alert>
+
+        <%}%>
+
+        <section class="register-form container-fluid">
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 ">
+                <p class="lead text-center">Hello, <%= name%>, <%= reg_no%>!</p>
+                <div class="row">
+                    <div class="col-xs-2 col-xs-offset-5">
+                        <img src="https://academics.vit.ac.in/student/view_photo_2.asp?rgno=<%=reg_no%>" height="150" class="img-responsive photo" alt="<%= name%>" />
+                  </div>
+                </div>
+                <br>
+                <br>
+                <p>Please read the following instructions before proceeding.</p>
+                <ol>
+                    <li>
+                        The test involves a combination of objective and subjective questions.
+                    </li>
+                    <li>
+                        The technical, logical and aptitude based questions are objective questions, the management questions are subjective in nature.
+                    </li>
+                    <li>
+                        There is no negative marking.
+                    </li>
+                    <li>
+                        Duration of the test is 15 minutes.
+                    </li>
+                    <li>
+                        Only one attempt per student is allowed.
+                    </li>
+                    <li>
+                        All the programming questions are Python centric.
+                    </li>
+                    <li>
+                        Please do not indulge in unfair means for answering the questions, anyone found doing so maybe subject to immediate disqualification from the selection process.
+                    </li>
+                    <li>
+                        The decision given by the members of IEEE - Computer Society VIT Student Chapter is final.
+                    </li>
+                    <li>
+                        By clicking on proceed, you hereby agree to our above mentioned terms and conditions and will abide by them.
+                    </li>
+                </ol>
+            </div>
+
+          </div>
+
+          <div class="row text-center">
+            <a class="white-button-container" href="/roundone/questions"><span class="white-button">Proceed</span></a>
+          </div>
+          </section>
+      </main>
+
+
+
+    <footer>&copy; IEEE-CS, VIT Chapter</footer>
+    </section>
+
+
+    <script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
+    <script type="text/javascript">
+    //var t = new Trianglify();
+    var pattern = Trianglify({
+      width: screen.width,
+      height: screen.height,
+      cell_size: Math.random()*200 + 40,
+      x_colors: "random",
+      variance: Math.random(),
+    }).png();
+    console.log(pattern);
+
+    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('+pattern+')');
+    </script>
+
+
+  </body>
+</html>

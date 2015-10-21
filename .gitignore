@@ -101,3 +101,5 @@ ehthumbs.db
 Icon?
 thumbs.db
 
+*.log
+node_modules/

@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var path = require('path')
+var app = require(path.join(__dirname, '..', 'app'));
+
+var port = process.env.PORT || 3000;
+
+app.set('port', port);
+
+const onBind = function () {
+  console.log('server running');
+};
+
+var server = app.listen(app.get('port'), onBind);
