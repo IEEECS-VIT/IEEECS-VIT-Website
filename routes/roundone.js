@@ -122,7 +122,7 @@ router.get('/questions', function(req, res) {
         })
       },
       'technical':function (asyncCallback) {
-          getNRandomRecords(5, technical, function (err, technicalq) {
+          getNRandomRecords(12, technical, function (err, technicalq) {
             if(err)
             {
               console.log(err);

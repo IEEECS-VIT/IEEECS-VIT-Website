@@ -37,7 +37,7 @@
             <div class="has-feedback"
             ng-class="{ 'has-error': register_form.reg_no.$invalid && register_form.reg_no.$dirty, 'has-success': !register_form.reg_no.$invalid && register_form.reg_no.$dirty}">
               <label for="reg_no" class="control-label">Registration Number</label> <br>
-              <input class="form-control" type="text" name="reg_no" id="reg_no" pattern="^\d{2}[A-Za-z]{3}\d{4}" maxlength="9" required="true" ng-model="reg_no"/> <br>
+              <input class="form-control" type="text" name="reg_no" id="reg_no" pattern="^15[A-Za-z]{3}[0,2]\d{3}$" maxlength="9" required="true" ng-model="reg_no"/> <br>
             </div>
 
             <div class="has-feedback"
@@ -53,7 +53,7 @@
             </div>
             <div class="has-feedback"
             ng-class="{ 'has-error': register_form.preference.$invalid && register_form.preference.$dirty, 'has-success': !register_form.preference.$invalid && register_form.preference.$dirty}">
-              <label for="preference" class="control-label">Select your order of preference</label> <br>
+              <label for="preference" class="control-label">Rank yourself in descending order of suitability (first one being the best fit)</label> <br>
               <select class="form-control" id="preference" name="preference" ng-model="preference" required="true">
                 <option value="Technical Management Design">Technical Management Design</option>
                 <option value="Technical Design Management">Technical Design Management</option>

@@ -3,7 +3,11 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-  res.render('index');
+    let s_time = 1446118278417;
+    let current_time = new Date().getTime();
+    var difference = ((s_time - current_time)/1000);
+    difference = Math.round(difference);
+    res.render('index', {time: difference});
 });
 
 router.get('/selections', function (req, res) {
