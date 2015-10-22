@@ -24,7 +24,6 @@
 
         <section>
           <form class="register-form" action="/register" method="post" name="register_form">
-              <input type="hidden" value="<%= csrfToken%>" name="_csrf" />
             <div class="has-feedback"
             ng-class="{ 'has-error': register_form.name.$invalid && register_form.name.$dirty, 'has-success': !register_form.name.$invalid && register_form.name.$dirty}">
               <label for="name" class="control-label">Name</label> <br>

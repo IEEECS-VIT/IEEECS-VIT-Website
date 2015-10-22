@@ -55,7 +55,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/general', function(req, res) {
-  res.render('general', {csrfToken: req.csrfToken()});
+  res.render('general');
 });
 
 
@@ -73,7 +73,7 @@ router.post('/general', function(req, res) {
     const onInsert = function (err) {
         if (err) {
             //console.log(err);
-            res.render('general', {error: "You have already submitted the form once.", csrfToken: req.csrfToken()});
+           res.render('general', {error: "You have already submitted the form once."});
         }
         else {
             res.cookie('name', data.name, {signed: true});
@@ -103,7 +103,7 @@ router.get('/questions', function(req, res) {
   {
     console.log('refresh');
     res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-    res.render('questions', {technical: JSON.parse(req.signedCookies['technical']), management: JSON.parse(req.signedCookies['management']), csrfToken: req.csrfToken()});
+    res.render('questions', {technical: JSON.parse(req.signedCookies['technical']), management: JSON.parse(req.signedCookies['management'])});
   }
   else{
       res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
@@ -135,7 +135,7 @@ router.get('/questions', function(req, res) {
         function onUpdate() {
           res.cookie('technical', JSON.stringify(results.technical) , {signed: true});
           res.cookie('management', JSON.stringify(results.management) , {signed: true});
-          res.render('questions', {technical: results.technical, management: results.management, csrfToken: req.csrfToken()});
+          res.render('questions', {technical: results.technical, management: results.management});
         };
 
         let collection = req.db.collection('roundone');

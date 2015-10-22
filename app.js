@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb').MongoClient;
 var compress =  require('compression');
 var session = require('express-session');
-var csurf = require('csurf');
 
 var routes = require(path.join(__dirname, 'routes', 'index'));
 var roundOne = require(path.join(__dirname, 'routes', 'roundone'));
@@ -29,7 +28,6 @@ app.use(cookieParser(process.env.SECRET_STRING || 'randomsecretstring'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use(session({secret: 'session secret key', resave: '', saveUninitialized: ''}));
-app.use(csurf());
 
 var mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ccs16';
 var mongodb;

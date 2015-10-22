@@ -11,11 +11,11 @@ router.get('/', function(req, res) {
 });
 
 router.get('/selections', function (req, res) {
-	res.render('general', { csrfToken: req.csrfToken() });
+	res.render('general');
 });
 
 router.get('/login', function(req, res) {
-  res.render('login', {csrfToken: req.csrfToken()});
+  res.render('login');
 });
 
 router.post('/login', function (req, res) {
