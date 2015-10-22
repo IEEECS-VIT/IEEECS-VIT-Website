@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
     let current_time = new Date().getTime();
     var difference = ((s_time - current_time)/1000);
     difference = Math.round(difference);
-    res.render('index', {time: difference});
+    res.render('countdown', {time: difference});
 });
 
 router.get('/selections', function (req, res) {
