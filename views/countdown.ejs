@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>IEEE CS | VIT Branch</title>
+    <title>Core Committee | IEEE CS</title>
     <script src="/javascript/prefix-free.min.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -14,6 +14,18 @@
       main{
         top:45%;
       }
+      @media (max-width: 900px) {
+        .main-container h1{
+          font-weight: 900;
+          font-size: 28px;
+      }
+    }
+      @media (max-width: 400px) {
+        .main-container h1{
+          font-weight: 900;
+          font-size: 18px;
+      }
+    }
     </style>
 
   </head>
@@ -26,7 +38,7 @@
           <!-- countdown="time in minutes" -->
           <timer
           class="timer row"
-          countdown="<%= time %>"
+          countdown="604800"
           interval="1000"
           finish-callback="finished()"
           ng-class="timerColor"
@@ -34,8 +46,8 @@
 
             <div class="col-xs-offset-2 col-xs-2"><span ng-bind="days"></span><br> <small class="white"> day<span ng-bind="daysS"></span></small></div>
              <div class="col-xs-2"><span ng-bind="hours"></span> <br><small class="white"> hour<span ng-bind="hoursS"></span></small></div>
-             <div class="col-xs-2"><span ng-bind="minutes"></span><br> <small class="white"> minute<span ng-bind="minutesS"></span></small></div>
             <div class="col-xs-2"><span ng-bind="seconds"></span> <br><small class="white"> second<span ng-bind="secondsS"></span></small></div>
+            <div class="col-xs-2"><span ng-bind="minutes"></span><br> <small class="white"> minute<span ng-bind="minutesS"></span></small></div>
         </section>
 
        </header>
