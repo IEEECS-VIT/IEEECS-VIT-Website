@@ -54,9 +54,6 @@
       }
     </style>
     <script>
-        if (typeof(Storage) !== "undefined") {
-            sessionStorage.setItem("questions", <%= results %>);
-        }
         var formSubmitting = false;
         var setFormSubmitting = function() { formSubmitting = true; };
         window.onload = function() {
