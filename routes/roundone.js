@@ -206,7 +206,7 @@ router.post('/questions', function(req, res) {
         res.clearCookie('technical', {});
         res.clearCookie('management', {});
         res.clearCookie('reg_no', {});
-        res.redirect('/roundone');
+        res.redirect('/');
       }
 
       let management = req.db.collection('management');
