@@ -27,10 +27,8 @@ function getNRandomRecords(n, collection, callback) {
   collection.count(function (err, totalCount) {
     if(err)
       console.log(err);
-    console.log(totalCount);
     async.map(nRandomNumbers(n, totalCount),
       function (r, asyncCallback){
-        console.log(r);
         collection.findOne(
           {
             _id: {$eq: r}
@@ -40,7 +38,6 @@ function getNRandomRecords(n, collection, callback) {
                     return next(err)
 
                   var doc= result;
-                    console.log(doc);
                     asyncCallback(null, doc);
               }
           )
@@ -191,7 +188,6 @@ router.post('/questions', function(req, res) {
         if(doc.answer == t.answer){
           score++;
         }
-        console.log(doc.answer);
         t.correct = doc.options[doc.answer];
         t.question = doc.question;
         t.answer = doc.options[t.answer];
@@ -199,8 +195,6 @@ router.post('/questions', function(req, res) {
         asyncCallback(null, doc);
       });
     },function (err, results) {
-      console.log(score);
-
       function onUpdate() {
         res.clearCookie('name', {});
         res.clearCookie('technical', {});

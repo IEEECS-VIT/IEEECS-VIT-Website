@@ -24,7 +24,6 @@ router.post('/login', function (req, res) {
         if (!err) {
             if (doc && (bcrypt.compareSync(req.body.password, doc.password))) {
                 res.cookie('username', req.body.username, {maxAge: 86400000, signed: true});
-                console.log('equal');
                 res.redirect('/admin');
             }
             else {

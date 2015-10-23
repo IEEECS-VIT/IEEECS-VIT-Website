@@ -14,7 +14,6 @@ router.get('/', function (req, res) {
           console.log(err);
           res.redirect('/login');
         }
-        console.log(docs);
         docs.toArray(function (err, records) {
           res.render('admin', {records: records});
         });
@@ -35,10 +34,7 @@ router.get('/:id', function (req, res) {
           console.log(err);
           res.redirect('/admin');
         }
-          console.log(doc);
-
           res.render('details', {details: doc});
-
       }
       collection.findOne({_id: req.params.id}, onFind);
   }
