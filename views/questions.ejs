@@ -53,7 +53,27 @@
         font-size: 16px;
       }
     </style>
-
+    <script>
+        if (typeof(Storage) !== "undefined") {
+            sessionStorage.setItem("questions", <%= results %>);
+        }
+        var formSubmitting = false;
+        var setFormSubmitting = function() { formSubmitting = true; };
+        window.onload = function() {
+            if (sessionStorage.getItem("questions")) {
+                results = sessionStorage.getItem("questions");
+            }
+            window.addEventListener("beforeunload", function (e) {
+                if (formSubmitting) {
+                    return undefined;
+                }
+                var confirmationMessage = 'You are trying to reload the page. '
+                                + 'You will be disqualified. ';
+                (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+                return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+            });
+        };
+    </script>
 
   </head>
   <body ng-app="formApp">
@@ -80,7 +100,7 @@
         <%}%>
 
         <section>
-            <form class="register-form" id="register-form" action="/roundone/questions" method="post" name="register_form">
+            <form class="register-form" id="register-form" action="/roundone/questions" method="post" name="register_form" onsubmit="setFormSubmitting()">
               <section id="technical">
                 <% var n = 1; %>
 
@@ -200,6 +220,7 @@
         //console.log($scope.blurCount);
         $scope.timerColor = 'white'
         $scope.finished = function () {
+            setFormSubmitting();
           document.getElementById('register-form').submit();
         }
         $scope.turnRed = function () {

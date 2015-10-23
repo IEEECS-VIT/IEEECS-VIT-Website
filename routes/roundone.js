@@ -104,7 +104,6 @@ router.get('/questions', function(req, res) {
   }
   else{
       res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-    console.log(req.signedCookies['name']);
     let technical = req.db.collection('technical');
     let management = req.db.collection('management');
     //let keys = nRandomNumbers(5 ,10);
@@ -128,7 +127,6 @@ router.get('/questions', function(req, res) {
         })
       }
     }, function (err, results) {
-      console.log(results.technical);
         function onUpdate() {
           res.cookie('technical', JSON.stringify(results.technical) , {signed: true});
           res.cookie('management', JSON.stringify(results.management) , {signed: true});
@@ -149,9 +147,7 @@ router.get('/questions', function(req, res) {
 
 router.post('/questions', function(req, res) {
   if(!req.signedCookies['name']){
-    console.log("no cookie");
     res.redirect('/roundone');
-
   }
   //check technical questions
   var ts = [];
