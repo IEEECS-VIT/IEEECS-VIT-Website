@@ -54,6 +54,7 @@
       }
     </style>
     <script>
+
         var formSubmitting = false;
         var setFormSubmitting = function() { formSubmitting = true; };
         window.onload = function() {
@@ -78,7 +79,7 @@
       <section class="navbar navbar-fixed-top timer-container">
         <timer
         class="timer "
-        countdown="900"
+        countdown="12000"
         interval="1000"
         finish-callback="finished()"
         ng-class="timerColor"
@@ -110,13 +111,18 @@
                        <%= technical[i].question %>
                     </p>
                     <%n++%>
-
+                    <input  type="radio"
+                    name="t<%=technical[i]._id%>"
+                     value="unattempted"
+                     style="display: none;"
+                     checked="true"
+                       >
                     <label  class="radio-inline">
                       <input  type="radio"
                       name="t<%=technical[i]._id%>"
                       id="question<%=i%>optionA"
                        value="A"
-                         checked="true">
+                         >
                       <%= technical[i].options.A %>
                     </label>
 
@@ -152,6 +158,15 @@
                   </div>
                 <% } %>
               </section>
+
+              <section>
+                  <p>
+                      <strong class="qno"><%=n%>.</strong>&nbsp;
+                       What technical skills do you possess ?
+                       <%n++; %>
+                  </p>
+                  <textarea name="s" value=" " class="form-control" rows="8" cols="40"></textarea>
+              </section>
               <section id="management">
 
                 <% for(var i=0; i<management.length; i++){ %>
@@ -170,6 +185,16 @@
 
                   <input name="blurCount" type="text" ng-model="blurCount.count" style="display:none" >
               </section>
+
+              <section id="coding">
+                <div class="form-group">
+                  <p>
+                    <strong class="qno"><%=n%>.</strong>&nbsp;
+                     <%= coding.question %>
+                  </p>
+                  <textarea name="c<%=coding._id%>" value=" " class="form-control" rows="8" cols="40"></textarea>
+                </div>
+            </section>
 
               <section class="text-center">
                 <button class="white-button-container" ><span class="white-button">Submit</span></button>

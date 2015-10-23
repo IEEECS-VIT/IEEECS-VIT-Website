@@ -4,7 +4,11 @@ var async = require('async');
 
 var router = express.Router();
 
-
+let options = {
+    question: 1,
+    options: 1,
+    correct: 1
+};
 
 function nRandomNumbers(n, max) {
   var arr = [];
@@ -32,15 +36,14 @@ function getNRandomRecords(n, collection, callback) {
         collection.findOne(
           {
             _id: {$eq: r}
-          },
+        },
            function(err, result) {
                   if (err)
                     return next(err)
 
                   var doc= result;
                     asyncCallback(null, doc);
-              }
-          )
+              });
       }, function(err, results) {
         callback(null, results);
       });
@@ -66,7 +69,7 @@ router.post('/general', function(req, res) {
       email: req.body.email,
       preference: req.body.preference
     }
-    let collection = req.db.collection('roundone');
+    let collection = req.db.collection('round');
     const onInsert = function (err) {
         if (err) {
             //console.log(err);
@@ -91,23 +94,26 @@ router.get('/instructions', function(req, res) {
 router.get('/questions', function(req, res) {
 
   if(!req.signedCookies['name']){
-    console.log("no cookie");
     res.redirect('/roundone');
 
   }
-
-  else if(req.signedCookies['technical'] && req.signedCookies['management'])
-  {
+  else if(req.signedCookies['loaded']) {
     console.log('refresh');
     res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-    res.render('questions', {technical: JSON.parse(req.signedCookies['technical']), management: JSON.parse(req.signedCookies['management'])});
+    let collection = req.db.collection('round');
+    let _id = req.signedCookies['reg_no'];
+    collection.findOne({_id: _id}, function (err, doc) {
+      if(err) {
+        console.log(err);
+      }
+      res.render('questions', {technical: doc.technicalQuestions, management: doc.managementQuestions, coding: doc.codingQuestion[0] });
+    });
   }
   else{
-      res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+    res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
     let technical = req.db.collection('technical');
     let management = req.db.collection('management');
-    //let keys = nRandomNumbers(5 ,10);
-
+    let coding = req.db.collection('coding');
     async.parallel({
         'management':function (asyncCallback) {
           getNRandomRecords(3, management, function (err, managementq) {
@@ -125,23 +131,31 @@ router.get('/questions', function(req, res) {
             }
             asyncCallback(null, technicalq);
         })
-      }
-    }, function (err, results) {
+      },
+      'coding':function (asyncCallback) {
+          getNRandomRecords(2, coding, function (err, codingq) {
+            if(err)
+            {
+              console.log(err);
+            }
+            asyncCallback(null, codingq);
+        })
+    }},
+     function (err, results) {
         function onUpdate() {
-          res.cookie('technical', JSON.stringify(results.technical) , {signed: true});
-          res.cookie('management', JSON.stringify(results.management) , {signed: true});
-          res.render('questions', {technical: results.technical, management: results.management});
+          res.cookie('loaded', "true" , {signed: true});
+          res.render('questions', {technical: results.technical, management: results.management, coding: results.coding[0]});
         };
-
-        let collection = req.db.collection('roundone');
+        let collection = req.db.collection('round');
         let _id = req.signedCookies['reg_no'];
-
-        collection.update({_id: _id}, {$set: {begin_at: new Date().toLocaleString(), begin_at_ms: new Date().getTime()} }, onUpdate);
+        collection.update(
+          {_id: _id},
+          {$set: {begin_at: new Date().toLocaleString(), begin_at_ms: new Date().getTime(),
+            technicalQuestions: results.technical, managementQuestions: results.management,
+          codingQuestion: results.coding } },
+          onUpdate);
     });
   }
-
-
-
 });
 
 
@@ -152,6 +166,8 @@ router.post('/questions', function(req, res) {
   //check technical questions
   var ts = [];
   var ms = [];
+  var c;
+  var s;
   var blurCount = 0;
   for (var property in req.body) {
     if (req.body.hasOwnProperty(property)) {
@@ -165,22 +181,44 @@ router.post('/questions', function(req, res) {
         else if(question_type == 'm'){
           ms.push( { _id: question.slice(1, question.length), answer: answer} );
         }
+        else if (question_type == 'c') {
+            c =  { _id: question.slice(1, question.length), answer: answer} ;
+        }
+        else if (question_type == 's'){
+            s =  { question: "skill set", answer: answer} ;
+        }
         else {
           blurCount = answer;
-          console.log(blurCount);
         }
     }
   }
-  console.log(ms);
-
   var score = 0;
-  var technical = req.db.collection('technical');
-  async.map(ts,
-    function (t, asyncCallback){
+  var collection = req.db.collection('round');
+
       //console.log(t) ;
-      technical.findOne({_id: parseInt(t._id)}, function (err, doc) {
+      collection.findOne({_id: req.signedCookies['reg_no']}, function (err, doc) {
         if(err)
           console.log(err);
+
+        let tech = doc.technicalQuestions;
+        for (var i=0;i<tech.length; i++) {
+
+            for(var j=0; j<ts.length; j++){
+
+                let qAsked = tech[i];
+                let qAnswered = ts[j];
+                if(qAsked._id == qAnswered._id){
+                    if( qAsked.answer == qAnswered.answer){
+                    score++;
+                    }
+
+                    tech[i].answered = qAnswered.answer;
+
+                }
+            }
+        }
+        c.question = doc.codingQuestion[0].question;
+        /*
         if(doc.answer == t.answer){
           score++;
         }
@@ -188,14 +226,11 @@ router.post('/questions', function(req, res) {
         t.question = doc.question;
         t.answer = doc.options[t.answer];
         //console.log([doc.correct, t.answer]);
-        asyncCallback(null, doc);
-      });
-    },function (err, results) {
+        */
       function onUpdate() {
         res.clearCookie('name', {});
-        res.clearCookie('technical', {});
-        res.clearCookie('management', {});
         res.clearCookie('reg_no', {});
+        res.clearCookie('loaded', {});
         res.redirect('/');
       }
 
@@ -210,8 +245,11 @@ router.post('/questions', function(req, res) {
           });
         },function (err, results){
 
-        let collection = req.db.collection('roundone');
-        let updateQuery = {$set: {end_at_ms: new Date().getTime(), management: ms, technical: ts, technicalScore: score, blurCount:  blurCount} };
+        let collection = req.db.collection('round');
+        let updateQuery = {$set: {end_at_ms: new Date().getTime(),
+             management: ms, technicalQuestions: tech, coding: c,
+             skills: s,
+             technicalScore: score, blurCount:  blurCount} };
         let _id = req.signedCookies['reg_no'];
         collection.updateOne({_id: _id}, updateQuery, onUpdate);
     });

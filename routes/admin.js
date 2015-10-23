@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
     res.redirect('/login');
   }
   else {
-      let collection = req.db.collection('roundone');
+      let collection = req.db.collection('round');
       function onFind(err, docs) {
         if(err){
           console.log(err);
@@ -28,7 +28,7 @@ router.get('/:id', function (req, res) {
   }
   else
   {
-      let collection = req.db.collection('roundone');
+      let collection = req.db.collection('round');
       function onFind(err, doc) {
         if(err || !doc){
           console.log(err);
