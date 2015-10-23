@@ -1,282 +1,253 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Register</title>
     <script src="/javascript/prefix-free.min.js"></script>
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet"/>
-    <link rel='stylesheet' href='/stylesheets/register_style.css' />
-
-
+    <link rel='stylesheet' href='/stylesheets/register_style.css'/>
     <style media="screen">
-      .white{
-        color: white;
-      }
-      .red{
-        color: red;
-      }
+        .white {
+            color: white;
+        }
 
-      .timer-container{
-        background: rgba(0, 0, 0, 0.5);
-        max-height: 48px;
-        padding: 16px;
-      }
-      .form-group{
-        padding-bottom: 16px;
-      }
-      main{
-        padding-top: 48px;
-      }
-      .timer{
-        margin-top: 16px;
-        font-size: 16px;
-        font-weight: 900;
-      }
-      p, label{
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        text-transform: none;
-        font-variant: normal;
+        .red {
+            color: red;
+        }
 
-      }
-      strong{
-        margin-right: 8px;
-      }
-      p{
-        font-size: 18px;
-        line-height: 1.3;
-      }
-      label{
-        font-size: 16px;
-      }
+        .timer-container {
+            background: rgba(0, 0, 0, 0.5);
+            max-height: 48px;
+            padding: 16px;
+        }
+
+        .form-group {
+            padding-bottom: 16px;
+        }
+
+        main {
+            padding-top: 48px;
+        }
+
+        .timer {
+            margin-top: 16px;
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        p, label {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            text-transform: none;
+            font-variant: normal;
+
+        }
+
+        strong {
+            margin-right: 8px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.3;
+        }
+
+        label {
+            font-size: 16px;
+        }
     </style>
-    <script>
-
-        var formSubmitting = false;
-        var setFormSubmitting = function() { formSubmitting = true; };
-        window.onload = function() {
-            if (sessionStorage.getItem("questions")) {
-                results = sessionStorage.getItem("questions");
-            }
-            window.addEventListener("beforeunload", function (e) {
-                if (formSubmitting) {
-                    return undefined;
-                }
-                var confirmationMessage = 'You are trying to reload the page. '
-                                + 'You will be disqualified. ';
-                (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-                return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-            });
-        };
-    </script>
-
-  </head>
-  <body ng-app="formApp">
-    <section  id="main-container" class="main-container" ng-controller="MainController">
-      <section class="navbar navbar-fixed-top timer-container">
+</head>
+<body ng-app="formApp">
+<section id="main-container" class="main-container" ng-controller="MainController">
+    <section class="navbar navbar-fixed-top timer-container">
         <timer
-        class="timer "
-        countdown="12000"
-        interval="1000"
-        finish-callback="finished()"
-        ng-class="timerColor"
-        >
-          <span ng-bind="mminutes"></span>:<span ng-bind="sseconds"></span>
-      </section>
-      <main>
-        <header> <h1><img height="42"src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Core Committee <br> Selections</h1>
+                class="timer "
+                countdown="1200"
+                interval="1000"
+                finish-callback="finished()"
+                ng-class="timerColor"
+                >
+            <span ng-bind="mminutes"></span>:<span ng-bind="sseconds"></span>
+    </section>
+    <main>
+        <header><h1><img height="42" src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Core Committee <br>
+                Selections</h1>
 
-         </header>
-
+        </header>
 
         <% if(locals.hasOwnProperty('error')){ %>
-          <uib-alert type="danger" >  <%=error%>  </uib-alert>
+        <uib-alert type="danger">  <%= error %>  </uib-alert>
 
-        <%}%>
+        <% } %>
 
         <section>
-            <form class="register-form" id="register-form" action="/roundone/questions" method="post" name="register_form" onsubmit="setFormSubmitting()">
-              <section id="technical">
-                <% var n = 1; %>
+            <form class="register-form" id="register-form" action="/roundone/questions" method="post"
+                  name="register_form">
+                <section id="technical">
+                    <% var n = 1; %>
 
-                <% for(var i=0; i<technical.length; i++){ %>
+                    <% for(var i = 0; i < technical.length; i++){ %>
 
-                  <div class="form-group ">
+                    <div class="form-group ">
 
-                    <p >
-                      <strong ><%=n%>.</strong> &nbsp;
-                       <%= technical[i].question %>
+                        <p>
+                            <strong><%= n %>.</strong> &nbsp;
+                            <%= technical[i].question %>
+                        </p>
+                        <% n++ %>
+                        <input type="radio"
+                               name="t<%= technical[i]._id %>"
+                               value="unattempted"
+                               style="display: none;"
+                               checked="true"
+                                >
+                        <label class="radio-inline">
+                            <input type="radio"
+                                   name="t<%= technical[i]._id %>"
+                                   id="question<%= i %>optionA"
+                                   value="A"
+                                    >
+                            <%= technical[i].options.A %>
+                        </label>
+
+
+                        <label class="radio-inline">
+                            <input type="radio"
+                                   name="t<%= technical[i]._id %>"
+                                   id="question<%= i %>optionB"
+                                   value="B"
+                                    >
+                            <%= technical[i].options.B %>
+                        </label>
+
+                        <label class="radio-inline">
+                            <input type="radio"
+                                   name="t<%= technical[i]._id %>"
+                                   id="question<%= i %>optionC"
+                                   value="C"
+                                    >
+                            <%= technical[i].options.C %>
+                        </label>
+
+                        <label class="radio-inline">
+                            <input type="radio"
+                                   name="t<%= technical[i]._id %>"
+                                   id="question<%= i %>optionD"
+                                   value="D"
+                                    >
+                            <%= technical[i].options.D %>
+                        </label>
+
+                    </div>
+                    <% } %>
+                </section>
+
+                <section>
+                    <p>
+                        <strong class="qno"><%= n %>.</strong>&nbsp;
+                        What technical skills do you possess ?
+                        <% n++; %>
                     </p>
-                    <%n++%>
-                    <input  type="radio"
-                    name="t<%=technical[i]._id%>"
-                     value="unattempted"
-                     style="display: none;"
-                     checked="true"
-                       >
-                    <label  class="radio-inline">
-                      <input  type="radio"
-                      name="t<%=technical[i]._id%>"
-                      id="question<%=i%>optionA"
-                       value="A"
-                         >
-                      <%= technical[i].options.A %>
-                    </label>
+                    <textarea name="s" value=" " class="form-control" rows="8" cols="40"></textarea>
+                </section>
+                <section id="management">
 
+                    <% for(var i = 0; i < management.length; i++){ %>
 
+                    <div class="form-group">
 
-                    <label  class="radio-inline">
-                      <input  type="radio"
-                      name="t<%=technical[i]._id%>"
-                      id="question<%=i%>optionB"
-                       value="B"
-                         >
-                      <%= technical[i].options.B %>
-                    </label>
+                        <p>
+                            <strong class="qno"><%= n %>.</strong>&nbsp;
+                            <%= management[i].question %>
+                        </p>
+                        <% n++ %>
 
-                    <label  class="radio-inline">
-                      <input  type="radio"
-                      name="t<%=technical[i]._id%>"
-                      id="question<%=i%>optionC"
-                       value="C"
-                         >
-                      <%= technical[i].options.C %>
-                    </label>
+                        <textarea name="m<%= management[i]._id %>" value=" " class="form-control" rows="8"
+                                  cols="40"></textarea>
+                    </div>
+                    <% } %>
 
-                    <label  class="radio-inline">
-                      <input  type="radio"
-                      name="t<%=technical[i]._id%>"
-                      id="question<%=i%>optionD"
-                       value="D"
-                         >
-                      <%= technical[i].options.D %>
-                    </label>
+                    <input name="blurCount" type="text" ng-model="blurCount.count" style="display:none">
+                </section>
 
-                  </div>
-                <% } %>
-              </section>
+                <section id="coding">
+                    <div class="form-group">
+                        <p>
+                            <strong class="qno"><%= n %>.</strong>&nbsp;
+                            <%= coding.question %>
+                        </p>
+                        <textarea name="c<%= coding._id %>" value=" " class="form-control" rows="8"
+                                  cols="40"></textarea>
+                    </div>
+                </section>
 
-              <section>
-                  <p>
-                      <strong class="qno"><%=n%>.</strong>&nbsp;
-                       What technical skills do you possess ?
-                       <%n++; %>
-                  </p>
-                  <textarea name="s" value=" " class="form-control" rows="8" cols="40"></textarea>
-              </section>
-              <section id="management">
-
-                <% for(var i=0; i<management.length; i++){ %>
-
-                  <div class="form-group">
-
-                    <p >
-                      <strong class="qno"><%=n%>.</strong>&nbsp;
-                       <%= management[i].question %>
-                    </p>
-                    <%n++%>
-
-                    <textarea name="m<%=management[i]._id%>" value=" " class="form-control" rows="8" cols="40"></textarea>
-                      </div>
-                <% } %>
-
-                  <input name="blurCount" type="text" ng-model="blurCount.count" style="display:none" >
-              </section>
-
-              <section id="coding">
-                <div class="form-group">
-                  <p>
-                    <strong class="qno"><%=n%>.</strong>&nbsp;
-                     <%= coding.question %>
-                  </p>
-                  <textarea name="c<%=coding._id%>" value=" " class="form-control" rows="8" cols="40"></textarea>
-                </div>
-            </section>
-
-              <section class="text-center">
-                <button class="white-button-container" ><span class="white-button">Submit</span></button>
-              </section>
+                <section class="text-center">
+                    <button class="white-button-container"><span class="white-button">Submit</span></button>
+                </section>
             </form>
         </section>
-      </main>
-
+    </main>
 
 
     <footer>&copy; IEEE-CS, VIT Chapter</footer>
-    </section>
-
-
-    <script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
-    <script type="text/javascript">
-    //var t = new Trianglify();
+</section>
+<script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
+<script type="text/javascript">
     var pattern = Trianglify({
-      width: screen.width,
-      height: screen.height,
-      cell_size: Math.random()*200 + 40,
-      x_colors: "random",
-      variance: Math.random(),
+        width: screen.width,
+        height: screen.height,
+        cell_size: Math.random() * 200 + 40,
+        x_colors: "random",
+        variance: Math.random(),
     }).png();
-
-    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('+pattern+')');
-    </script>
-
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-
-    <script src="/bower_components/moment/moment.js"></script>
-    <script src="/bower_components/humanize-duration/humanize-duration.js"></script>
-    <script src="/bower_components/angular-timer/dist/angular-timer.min.js"></script>
-
-    <script src="/bower_components/angular_page_visibility/dist/page_visibility.min.js"></script>
-
-
-
-    <script type="text/javascript">
-      angular.module("formApp", ["ui.bootstrap", "timer", "angular-page-visibility"])
-      .controller("MainController", function ($scope, $pageVisibility) {
-        var blur = false;
-        $scope.blurCount  = {count: 0};
-        //console.log($scope.blurCount);
-        $scope.timerColor = 'white'
-        $scope.finished = function () {
-            setFormSubmitting();
-          document.getElementById('register-form').submit();
-        }
-        $scope.turnRed = function () {
-            $scope.timerColor = 'text-danger';
-        };
-        $scope.$on('timer-tick', function (event, data) {
-
-          if (data.millis < 120000) {
-
-
-            $scope.turnRed();
-        }
-        $pageVisibility.$on('pageBlurred', function(){
-          if(!blur)
-          {
-            //console.log($scope.blurCount.count);
-            $scope.$apply(function(){
-              $scope.blurCount.count = $scope.blurCount.count + 1;
+    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url(' + pattern + ')');
+</script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/bower_components/moment/moment.js"></script>
+<script src="/bower_components/humanize-duration/humanize-duration.js"></script>
+<script src="/bower_components/angular-timer/dist/angular-timer.min.js"></script>
+<script src="/bower_components/angular_page_visibility/dist/page_visibility.min.js"></script>
+<script type="text/javascript">
+    angular.module("formApp", ["ui.bootstrap", "timer", "angular-page-visibility"])
+            .controller("MainController", function ($scope, $pageVisibility) {
+                var blur = false;
+                $scope.blurCount = {count: 0};
+                //console.log($scope.blurCount);
+                $scope.timerColor = 'white'
+                $scope.finished = function () {
+                    document.getElementById('register-form').submit();
+                }
+                $scope.turnRed = function () {
+                    $scope.timerColor = 'text-danger';
+                };
+                $scope.$on('timer-tick', function (event, data) {
+                    if (data.millis < 120000) {
+                        $scope.turnRed();
+                    }
+                    $pageVisibility.$on('pageBlurred', function () {
+                        if (!blur) {
+                            //console.log($scope.blurCount.count);
+                            $scope.$apply(function () {
+                                $scope.blurCount.count = $scope.blurCount.count + 1;
+                            })
+                            console.log('If you can see this message, we have an additional task for you.\nChange the object you see below to a negative number, no need to attempt the tech questions, just answer management and submit');
+                            console.log($scope.blurCount);
+                            blur = true;
+                            //console.log($scope.getCount());
+                        }
+                    });
+                    $pageVisibility.$on('pageFocused', function () {
+                        blur = false;
+                    });
+                    $scope.getCount = function () {
+                        return $scope.blurCount.count;
+                    }
                 })
-            console.log('If you can see this message, we have an additional task for you.\n Change the object you see below to a negative number, no need to attempt the tech questions, just answer management and submit');
-             console.log($scope.blurCount);
-             blur = true;
-             //console.log($scope.getCount());
-          }
-         });
-         $pageVisibility.$on('pageFocused', function(){
-           blur = false;
-         });
-         $scope.getCount = function () {
-           return $scope.blurCount.count;
-         }
-    })
-  });
-
-    </script>
-  </body>
+            });
+</script>
+</body>
 </html>

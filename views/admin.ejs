@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Admin</title>
-    <style >
-      table, td, th
-      {
-        font-family: sans-serif;
-        font-size: 16px;
-        border-collapse: collapse;
+    <style>
+        table, td, th {
+            font-family: sans-serif;
+            font-size: 16px;
+            border-collapse: collapse;
 
-      }
-      th{
-        padding: 5px;
-        padding-right: 8px;
-        padding-left: 8px;
-        font-weight: normal;
-        text-transform: lowercase;
-        font-variant: small-caps;
-        border-bottom: 1px solid black;
-        text-align: left;
-      }
-      td{
-        padding: 8px;
-      }
+        }
+
+        th {
+            padding: 5px;
+            padding-right: 8px;
+            padding-left: 8px;
+            font-weight: normal;
+            text-transform: lowercase;
+            font-variant: small-caps;
+            border-bottom: 1px solid black;
+            text-align: left;
+        }
+
+        td {
+            padding: 8px;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <a href="/logout">logout</a>
-    <table style="width=100%">
-      <tr>
+<body>
+<a href="/logout">logout</a>
+<table style="width=100%">
+    <tr>
         <th>
-          Registration Number
+            Registration Number
         </th>
         <th>
-          Name
+            Name
         </th>
         <th>
-          Preference
+            Preference
         </th>
         <th>
-          Score
+            Score
         </th>
         <th>
-          Cheat Count
+            Cheat Count
         </th>
-      </tr>
-      <% for(var i=0; i<records.length; i++) {%>
-      <tr>
+    </tr>
+    <% for(var i = 0; i < records.length; i++) { %>
+    <tr>
         <td>
-          <a href="/admin/<%= records[i].reg_no %>"><%= records[i].reg_no %></a>
+            <a href="/admin/<%= records[i].reg_no %>"><%= records[i].reg_no %></a>
         </td>
         <td>
-          <%= records[i].name %>
+            <%= records[i].name %>
         </td>
         <td>
-          <%= records[i].preference %>
+            <%= records[i].preference %>
         </td>
         <td>
-          <%= records[i].technicalScore %>
+            <%= records[i].technicalScore %>
         </td>
         <td>
-          <%= records[i].blurCount %>
+            <%= records[i].blurCount %>
         </td>
-      </tr>
-      <% } %>
-    </table>
-  </body>
+    </tr>
+    <% } %>
+</table>
+</body>
 </html>

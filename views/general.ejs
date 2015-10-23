@@ -1,105 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Register</title>
     <script src="javascript/prefix-free.min.js"></script>
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet"/>
-    <link rel='stylesheet' href='/stylesheets/register_style.css' />
+    <link rel='stylesheet' href='/stylesheets/register_style.css'/>
 
 
-  </head>
-  <body ng-app="formApp">
-    <section  id="main-container" class="main-container" ng-controller="MainController">
-      <main>
-        <header> <h1><img height="42"src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Core Committee <br>
-           Selections <br>
-          <small>Round 1</small>
-         </h1>  </header>
-
+</head>
+<body ng-app="formApp">
+<section id="main-container" class="main-container" ng-controller="MainController">
+    <main>
+        <header>
+            <h1><img height="42" src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Core Committee <br>
+                Selections <br>
+                <small>Round 1</small>
+            </h1>
+        </header>
 
         <% if(locals.hasOwnProperty('error')){ %>
-          <uib-alert type="danger" >  <%=error%>  </uib-alert>
+        <uib-alert type="danger">  <%= error %>  </uib-alert>
 
-        <%}%>
+        <% } %>
 
         <section>
             <form class="register-form" action="/roundone/general" method="post" name="register_form">
-            <div class="has-feedback"
-            ng-class="{ 'has-error': register_form.name.$invalid && register_form.name.$dirty, 'has-success': !register_form.name.$invalid && register_form.name.$dirty}">
-              <label for="name" class="control-label">Name</label> <br>
-              <input  class="form-control" type="text" name="name" id="name" autofocus="true" required="true" ng-model="name"/> <br>
-            </div>
+                <div class="has-feedback"
+                     ng-class="{ 'has-error': register_form.name.$invalid && register_form.name.$dirty, 'has-success': !register_form.name.$invalid && register_form.name.$dirty}">
+                    <label for="name" class="control-label">Name</label> <br>
+                    <input class="form-control" type="text" name="name" id="name" autofocus="true" required="true"
+                           ng-model="name"/> <br>
+                </div>
 
-            <div class="has-feedback"
-            ng-class="{ 'has-error': register_form.reg_no.$invalid && register_form.reg_no.$dirty, 'has-success': !register_form.reg_no.$invalid && register_form.reg_no.$dirty}">
-              <label for="reg_no" class="control-label">Registration Number</label> <br>
-              <input class="form-control" type="text" name="reg_no" id="reg_no" pattern="^15[A-Za-z]{3}[0,2]\d{3}$" maxlength="9" required="true" ng-model="reg_no"/> <br>
-            </div>
+                <div class="has-feedback"
+                     ng-class="{ 'has-error': register_form.reg_no.$invalid && register_form.reg_no.$dirty, 'has-success': !register_form.reg_no.$invalid && register_form.reg_no.$dirty}">
+                    <label for="reg_no" class="control-label">Registration Number</label> <br>
+                    <input class="form-control" type="text" name="reg_no" id="reg_no"
+                           pattern="^15[A-Za-z]{3}[0,2]\d{3}$" maxlength="9" required="true" ng-model="reg_no"/> <br>
+                </div>
 
-            <div class="has-feedback"
-            ng-class="{ 'has-error': register_form.phone.$invalid && register_form.phone.$dirty, 'has-success': !register_form.phone.$invalid && register_form.phone.$dirty}">
-              <label for="phone" class="control-label">Phone Number</label> <br>
-              <input class="form-control" type="tel" pattern="\d{10}" id="phone" name="phone" required="true" ng-model="phone"/> <br>
-            </div>
+                <div class="has-feedback"
+                     ng-class="{ 'has-error': register_form.phone.$invalid && register_form.phone.$dirty, 'has-success': !register_form.phone.$invalid && register_form.phone.$dirty}">
+                    <label for="phone" class="control-label">Phone Number</label> <br>
+                    <input class="form-control" type="tel" pattern="\d{10}" id="phone" name="phone" required="true"
+                           ng-model="phone"/> <br>
+                </div>
 
-            <div class="has-feedback"
-            ng-class="{ 'has-error': register_form.email.$invalid && register_form.email.$dirty, 'has-success': !register_form.email.$invalid && register_form.email.$dirty}">
-              <label for="email" class="control-label">email</label> <br>
-              <input class="form-control" type="email" name="email" id="email" required="true" ng-model="email"/> <br>
-            </div>
-            <div class="has-feedback"
-            ng-class="{ 'has-error': register_form.preference.$invalid && register_form.preference.$dirty, 'has-success': !register_form.preference.$invalid && register_form.preference.$dirty}">
-              <label for="preference" class="control-label">Rank yourself in descending order of suitability (first one being the best fit)</label> <br>
-              <select class="form-control" id="preference" name="preference" ng-model="preference" required="true">
-                <option value="Technical Management Design">Technical Management Design</option>
-                <option value="Technical Design Management">Technical Design Management</option>
-                <option value="Management Technical Design">Management Technical Design</option>
-                <option value="Management Design Technical">Management Design Technical</option>
-                <option value="Design Technical Management">Design Technical Management</option>
-                <option value="Design Management Technical">Design Management Technical</option>
-              </select>
-            </div>
+                <div class="has-feedback"
+                     ng-class="{ 'has-error': register_form.email.$invalid && register_form.email.$dirty, 'has-success': !register_form.email.$invalid && register_form.email.$dirty}">
+                    <label for="email" class="control-label">email</label> <br>
+                    <input class="form-control" type="email" name="email" id="email" required="true" ng-model="email"/>
+                    <br>
+                </div>
+                <div class="has-feedback"
+                     ng-class="{ 'has-error': register_form.preference.$invalid && register_form.preference.$dirty, 'has-success': !register_form.preference.$invalid && register_form.preference.$dirty}">
+                    <label for="preference" class="control-label">Rank yourself in descending order of suitability
+                        (first one being the best fit)</label> <br>
+                    <select class="form-control" id="preference" name="preference" ng-model="preference"
+                            required="true">
+                        <option value="Technical Management Design">Technical Management Design</option>
+                        <option value="Technical Design Management">Technical Design Management</option>
+                        <option value="Management Technical Design">Management Technical Design</option>
+                        <option value="Management Design Technical">Management Design Technical</option>
+                        <option value="Design Technical Management">Design Technical Management</option>
+                        <option value="Design Management Technical">Design Management Technical</option>
+                    </select>
+                </div>
 
 
-            <section class="text-center">
-              <button class="white-button-container" ><span class="white-button">Register</span></button>
-            </section>
-          </form>
+                <section class="text-center">
+                    <button class="white-button-container"><span class="white-button">Register</span></button>
+                </section>
+            </form>
         </section>
-      </main>
-
+    </main>
 
 
     <footer>&copy; IEEE-CS, VIT Chapter</footer>
-    </section>
+</section>
 
 
-    <script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
-    <script type="text/javascript">
+<script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
+<script type="text/javascript">
     //var t = new Trianglify();
     var pattern = Trianglify({
-      width: screen.width,
-      height: screen.height,
-      cell_size: Math.random()*200 + 40,
-      x_colors: "random",
-      variance: Math.random(),
+        width: screen.width,
+        height: screen.height,
+        cell_size: Math.random() * 200 + 40,
+        x_colors: "random",
+        variance: Math.random(),
     }).png();
-    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('+pattern+')');
-    </script>
+    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url(' + pattern + ')');
+</script>
 
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
 
-    <script type="text/javascript">
-      angular.module("formApp", ["ui.bootstrap"])
-      .controller("MainController", function ($scope) {
+<script type="text/javascript">
+    angular.module("formApp", ["ui.bootstrap"])
+            .controller("MainController", function ($scope) {
 
-      });
+            });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>

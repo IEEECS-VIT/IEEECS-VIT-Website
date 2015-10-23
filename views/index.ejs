@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>IEEE CS VIT</title>
     <script src="/javascript/prefix-free.min.js"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
 
-  </head>
-  <body>
-    <section class="main-container " id="main-container">
+</head>
+<body>
+<section class="main-container " id="main-container">
     <!-- todo - add countdown, remove the below -->
     <main>
-      <header> <h1><img height="42"src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Core Committee <br> Selections</h1>  </header>
-      <a class="white-button-container" href="/selections"><span  class="white-button" >Register</span></a>
+        <header><h1><img height="42" src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Core Committee <br>
+                Selections</h1></header>
+        <a class="white-button-container" href="/selections"><span class="white-button">Register</span></a>
     </main>
     <footer>&copy; IEEE-CS, VIT Chapter</footer>
-    </section>
+</section>
 
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
-    <script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
-    <script type="text/javascript">
+<link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+<script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
+<script type="text/javascript">
     //var t = new Trianglify();
     var pattern = Trianglify({
-      width: screen.width,
-      height: screen.height,
-      cell_size: Math.random()*200 + 40,
-      x_colors: 'random',
-      variance: Math.random(),
+        width: screen.width,
+        height: screen.height,
+        cell_size: Math.random() * 200 + 40,
+        x_colors: 'random',
+        variance: Math.random(),
     }).png();
     //console.log(pattern);
 
-    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('+pattern+')');
-    </script>
-  </body>
+    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url(' + pattern + ')');
+</script>
+</body>
 </html>

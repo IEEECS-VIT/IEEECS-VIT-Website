@@ -1,113 +1,122 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Admin</title>
-    <style >
-    body{
-      margin-left: 1.5vw;
-    }
-      table, td, th
-      {
-        font-family: sans-serif;
-        font-size: 16px;
-        border-collapse: collapse;
+    <style>
+        body {
+            margin-left: 1.5vw;
+        }
 
-      }
-      table{
-        width: 95vw;
+        table, td, th {
+            font-family: sans-serif;
+            font-size: 16px;
+            border-collapse: collapse;
 
-      }
-      th{
-        padding: 5px;
-        padding-right: 8px;
-        padding-left: 8px;
-        font-weight: normal;
-        text-align: left;
-        max-width: 50%;
-      }
-      tr:nth-child(even) {background: #FFF}
-      tr:nth-child(odd) {background: #CCC}
-      td{
-        padding: 8px;
-        width: 50%;
-      }
+        }
+
+        table {
+            width: 95vw;
+
+        }
+
+        th {
+            padding: 5px;
+            padding-right: 8px;
+            padding-left: 8px;
+            font-weight: normal;
+            text-align: left;
+            max-width: 50%;
+        }
+
+        tr:nth-child(even) {
+            background: #FFF
+        }
+
+        tr:nth-child(odd) {
+            background: #CCC
+        }
+
+        td {
+            padding: 8px;
+            width: 50%;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <a href="/logout">logout</a>
-    <table style="width=100%">
-      <tr>
+<body>
+<a href="/logout">logout</a>
+<table style="width=100%">
+    <tr>
         <th>
-          Registration Number
+            Registration Number
         </th>
         <td>
-          <%=details.reg_no%>
+            <%= details.reg_no %>
         </td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <th>
-          Name
+            Name
         </th>
         <td>
-          <%=details.name%>
+            <%= details.name %>
         </td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <th>
-          Phone
+            Phone
         </th>
         <td>
-          <%=details.phone%>
+            <%= details.phone %>
         </td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <th>
-          Preference
+            Preference
         </th>
         <td>
-          <%=details.preference%>
+            <%= details.preference %>
         </td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <th>
-          Time taken
+            Time taken
         </th>
         <td>
-          <%= (( parseInt(details.end_at_ms) - parseInt(details.begin_at_ms) ) * 0.000016).toFixed(2) %> Minutes
+            <%= (( parseInt(details.end_at_ms) - parseInt(details.begin_at_ms) ) * 0.000016).toFixed(2) %> Minutes
         </td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <th>
-          Score
+            Score
         </th>
         <td>
-          <%=details.technicalScore%>
+            <%= details.technicalScore %>
         </td>
-      </tr>
-      <% for(var i=0;i<details.management.length; i++){ %>
-      <tr>
+    </tr>
+    <% for(var i = 0;i < details.management.length; i++){ %>
+    <tr>
         <th>
-          <%=details.management[i].question%>
+            <%= details.management[i].question %>
         </th>
         <td>
-          <%=details.management[i].answer%>
+            <%= details.management[i].answer %>
         </td>
-      </tr>
-      <%}%>
-      <% for(var i=0;i<details.technical.length; i++){ %>
-      <tr>
+    </tr>
+    <% } %>
+    <% for(var i = 0;i < details.technical.length; i++){ %>
+    <tr>
         <th>
-          <%=details.technical[i].question%>
+            <%= details.technical[i].question %>
         </th>
         <td>
-          answer : <%=details.technical[i].answer%> <br>
-          correct : <%=details.technical[i].correct%>
+            answer : <%= details.technical[i].answer %> <br>
+            correct : <%= details.technical[i].correct %>
         </td>
-      </tr>
-      <%}%>
-    </table>
-  </body>
+    </tr>
+    <% } %>
+</table>
+</body>
 </html>

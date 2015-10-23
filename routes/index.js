@@ -3,24 +3,24 @@ var express = require('express');
 var bcrypt = require('bcrypt');
 var router = express.Router();
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     let s_time = 1446118278417;
     let current_time = new Date().getTime();
-    var difference = ((s_time - current_time)/1000);
+    var difference = ((s_time - current_time) / 1000);
     difference = Math.round(difference);
     res.render('countdown', {time: difference});
 });
 
 router.get('/selections', function (req, res) {
-	res.render('general');
+    res.render('general');
 });
 
-router.get('/login', function(req, res) {
-  res.render('login');
+router.get('/login', function (req, res) {
+    res.render('login');
 });
 
 router.post('/login', function (req, res) {
-  let collection = req.db.collection('admin');
+    let collection = req.db.collection('admin');
     const onFetch = function (err, doc) {
         if (!err) {
             if (doc && (bcrypt.compareSync(req.body.password, doc.password))) {
