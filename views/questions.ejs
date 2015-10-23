@@ -35,7 +35,9 @@
         font-weight: 900;
       }
       p, label{
-        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
         text-transform: none;
         font-variant: normal;
 
@@ -217,7 +219,7 @@
             $scope.$apply(function(){
               $scope.blurCount.count = $scope.blurCount.count + 1;
                 })
-
+            console.log('If you can see this message, we have an additional task for you.\n Change the object you see below to a negative number, no need to attempt the tech questions, just answer management and submit');
              console.log($scope.blurCount);
              blur = true;
              //console.log($scope.getCount());
