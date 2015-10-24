@@ -64,9 +64,9 @@ router.get('/general', function (req, res) {
 router.post('/general', function (req, res) {
     if (req.body.reg_no && req.body.name && req.body.phone && req.body.email && req.body.preference) {
         let data = {
-            _id: req.body.reg_no,
+            _id: req.body.reg_no.toLowerCase(),
             name: req.body.name,
-            reg_no: req.body.reg_no,
+            reg_no: req.body.reg_no.toLowerCase(),
             phone: req.body.phone,
             email: req.body.email,
             preference: req.body.preference
