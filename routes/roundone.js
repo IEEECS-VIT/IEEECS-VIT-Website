@@ -53,14 +53,15 @@ function getNRandomRecords(n, collection, callback) {
 };
 
 router.get('/', function (req, res) {
-    res.render('index', {url: "/roundone/general"});
+    res.redirect('/');
+    //res.render('index', {url: "/roundone/general"});
 });
 
 router.get('/general', function (req, res) {
-    res.render('general');
+    res.redirect('/');
+    //res.render('general');
 });
-
-
+/*
 router.post('/general', function (req, res) {
     if (req.body.reg_no && req.body.name && req.body.phone && req.body.email && req.body.preference) {
         let data = {
@@ -88,15 +89,17 @@ router.post('/general', function (req, res) {
         res.render('error', {message: 'Invalid request'});
     }
 });
-
+*/
 router.get('/instructions', function (req, res) {
-    if (req.signedCookies['reg_no']) {
+    res.redirect('/');
+    /*if (req.signedCookies['reg_no']) {
         res.render('instructions', {reg_no: req.signedCookies['reg_no'], name: req.signedCookies['name']});
-    }
+    }*/
 });
 
 router.get('/questions', function (req, res) {
-
+    res.redirect('/');
+    /*
     if (!req.signedCookies['name']) {
         res.redirect('/roundone');
 
@@ -175,10 +178,9 @@ router.get('/questions', function (req, res) {
                     },
                     onUpdate);
             });
-    }
+    }*/
 });
-
-
+/*
 router.post('/questions', function (req, res) {
     if (!req.signedCookies['name']) {
         res.redirect('/roundone');
@@ -268,5 +270,5 @@ router.post('/questions', function (req, res) {
         }
     });
 });
-
+*/
 module.exports = router;

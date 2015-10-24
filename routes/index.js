@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/selections', function (req, res) {
-    res.render('general');
+    res.redirect('/');
 });
 
 router.get('/login', function (req, res) {
