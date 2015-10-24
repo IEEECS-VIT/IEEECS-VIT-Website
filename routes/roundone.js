@@ -53,12 +53,12 @@ function getNRandomRecords(n, collection, callback) {
 };
 
 router.get('/', function (req, res) {
-   // res.redirect('/');
+    res.redirect('/');
     res.render('index', {url: "/roundone/general"});
 });
 
 router.get('/general', function (req, res) {
-    //res.redirect('/');
+    res.redirect('/');
     res.render('general');
 });
 
@@ -91,14 +91,14 @@ router.post('/general', function (req, res) {
 });
 
 router.get('/instructions', function (req, res) {
-   // res.redirect('/');
+    res.redirect('/');
     if (req.signedCookies['reg_no']) {
         res.render('instructions', {reg_no: req.signedCookies['reg_no'], name: req.signedCookies['name']});
     }
 });
 
 router.get('/questions', function (req, res) {
-  //  res.redirect('/');
+   res.redirect('/');
     if (!req.signedCookies['name']) {
         res.redirect('/roundone');
 
