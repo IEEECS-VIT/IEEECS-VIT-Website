@@ -12,7 +12,8 @@ router.get('/', function (req, res) {
 });
 
 router.get('/selections', function (req, res) {
-    res.redirect('/');
+   // res.redirect('/');
+    res.render('general');
 });
 
 router.get('/login', function (req, res) {
