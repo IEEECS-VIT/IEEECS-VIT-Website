@@ -35,6 +35,25 @@ router.post('/login', function (req, res) {
     collection.findOne({username: req.body.username}, onFetch);
 });
 
+router.get('/selected', function (req, res) {
+  function onFind(err, doc) {
+    if(!err && doc){
+      doc.toArray(function (err, arr) {
+        console.log(arr);
+        res.render('selected', {selected : arr});
+      })
+
+    }
+    else {
+      res.redirect('/');
+    }
+  }
+  let collection = req.db.collection('selected');
+
+  collection.find({}, onFind);
+
+})
+
 router.get('/logout', function (req, res) {
     if (req.signedCookies.username) {
         res.clearCookie('username', {});

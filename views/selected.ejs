@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Round One Results | IEEE CS</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/table.css" media="screen"  charset="utf-8">
+  </head>
+  <body ng-app="ResultsApp">
+<div class="container" ng-controller="MainController">
+  <div class="input-group">
+    <span class="input-group-addon" id="addon"><span class="glyphicon glyphicon-search" ></span></span>
+    <input type="search" class="form-control" placeholder="Search" aria-describedby="addon" ng-model="searchTxt">
+  </div>
+
+  <table>
+    <tr>
+      <th>
+        Registration Number
+      </th>
+      <th>
+        Name
+      </th>
+    </tr>
+
+    <tr ng-repeat="s in selected | filter:searchTxt">
+        <td ng-bind="s.reg_no | ifEmpty: '' |uppercase "></td>
+        <td ng-bind="s.name | ifEmpty: '' | capitalize"></td>
+    </tr>
+  </table>
+</div>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module("ResultsApp", [])
+            .controller("MainController", function ($scope) {
+              $scope.selected = <%- JSON.stringify(selected); %>;
+              $scope.searchTxt = '';
+            })
+            .filter('ifEmpty', function() {
+    return function(input, defaultValue) {
+        if (angular.isUndefined(input) || input === null || input === '') {
+            return defaultValue;
+        }
+
+        return input;
+    }
+
+}).filter('capitalize', function() {
+  return function(input){
+    if(input.indexOf(' ') !== -1){
+      var inputPieces,
+          i;
+
+      input = input.toLowerCase();
+      inputPieces = input.split(' ');
+
+      for(i = 0; i < inputPieces.length; i++){
+        inputPieces[i] = capitalizeString(inputPieces[i]);
+      }
+
+      return inputPieces.toString().replace(/,/g, ' ');
+    }
+    else {
+      input = input.toLowerCase();
+      return capitalizeString(input);
+    }
+
+    function capitalizeString(inputString){
+      return inputString.substring(0,1).toUpperCase() + inputString.substring(1);
+    }
+  };
+});
+</script>
+  </body>
+</html>
