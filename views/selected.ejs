@@ -31,9 +31,6 @@
   <table>
     <tr>
       <th>
-      Year
-      </th>
-      <th>
         Registration Number
       </th>
       <th>
@@ -42,7 +39,6 @@
     </tr>
 
     <tr ng-repeat="s in selected | filter:searchTxt">
-        <td ng-bind="s.year"></td>
         <td ng-bind="s.reg_no | ifEmpty: '' |uppercase "></td>
         <td ng-bind="s.name | ifEmpty: '' | capitalize"></td>
     </tr>
