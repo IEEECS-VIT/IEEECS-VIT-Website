@@ -1,6 +1,6 @@
 'use strict';
 var express = require('express');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcrypt');
 var router = express.Router();
 
 router.get('/', function (req, res) {
