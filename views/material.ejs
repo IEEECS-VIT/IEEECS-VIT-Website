@@ -7,17 +7,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="/fonts/themify-icons/themify-icons.css" />
         <style>
+
             .main{
                 padding: 0!important;
                 margin:0;
+                z-index: 0;
+                box-shadow:inset 0 5px 5px 0 rgba(0,0,0,1)!important;
             }
-
+            nav{
+               /* box-shadow:inset 0 -5px 5px 0 rgba(0,0,0,0.3)!important;*/
+            }
             body,.main-container,.tab,.tab-control,.tab-view{
                 text-align: center;
                 height:100%;
                 position: relative;
                 padding: 0;
-                overflow-y: hidden;
+            }
+            .tab-control{
+                position: fixed;
             }
             .web{
                 background:rgba(29,202,255,1);
@@ -83,7 +90,7 @@
             }
             .tab-control ul li.active{
 
-                box-shadow:  0 5px 5px 5px rgba(0,0,0,0.3),0 -5px 5px 5px rgba(0,0,0,0.3);
+                box-shadow:  -10px 5px 5px 5px rgba(0,0,0,0.3),-10px -5px 5px 5px rgba(0,0,0,0.3);
             }
             .view{
                 display: block!important;
@@ -101,42 +108,31 @@
                 font-size: 3rem;
             }
             .main{
-                overflow-y: scroll;
             }
             @media screen and (max-width: 900px){
-                .tab-control{
-                }
-                .tab-control{
 
-                    padding: 0!important;
-                    margin: 0;
-                }
-                .tab-control ul{
+                nav ul{
                     padding: 0;
                     margin: 0;
-                    width: auto;
+                    width: 20%!important;
                 }
-                .tab-control ul li{
-                    padding:0 0;
-                    padding-top: 15%;
+                nav ul li{
+                    padding: 15% 0 0 0 !important;
                     width: 100%!important;
                 }
-                .tab-control ul li:not(.active){
-                    box-shadow:none;
-                }
-                .tab-control ul li:hover a{
+                nav ul li a:hover{
                     color:white;
                 }
-                .tab-control ul li a{
-                    color: rgb(150,150,150);
+                nav ul li a{
+                    color: rgb(220,220,220);
                 }
-                .tab-control ul li.active a{
+                nav ul li.active a{
                     color:rgba(0,0,0,1);
 
                 }
-                .tab-control ul li.active{
+                nav ul li.active{
 
-                    box-shadow:  0 5px 5px 5px rgba(0,0,0,0.3),0 -5px 5px 5px rgba(0,0,0,0.3);
+                    box-shadow: 0 5px 5px 5px rgba(0,0,0,0.3),0 -5px 5px 5px rgba(0,0,0,0.3);
                 }
                 .tab-btn{
                     width:auto;
@@ -152,7 +148,7 @@
         </style>
     </head>
     <body id="body" class="git">
-    <nav class="hide-on-med-and-up tab-control white grey-text text-darken-4">
+    <nav class="hide-on-med-and-up  white grey-text text-darken-4 z-depth-1">
         <a href="#" class="brand-logo  grey-text text-darken-4 ">IEEE-CS</a>
         <ul id="slide-out" class=" side-nav">
             <li class="active git"><a href="#!" data-tab-name="git" class="tab-btn"><div><span class="ti-github"></span></div></a></li>
@@ -179,6 +175,7 @@
                     <li></li>
                 </ul>
             </div>
+            <div class="col m1 hide-on-small-only">asd</div>
             <div class="col m11 s12 tab-view main" id="main">
                 <div id="git" class="col s12 no-view git data">
                     <div class="row">
@@ -610,21 +607,18 @@
 
             </div>
         </div>
-        <footer>
 
-        </footer>
     </div>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <script type="text/javascript">
         window.onload = function(){
             $(".button-collapse").sideNav();
-            document.getElementById('main').style.height = window.innerHeight+'px';
             document.getElementById('list-desk').style.height = window.innerHeight+'px';
             tab('#git');
         };
         window.onresize = function(){
-            document.getElementById('main').style.height = window.innerHeight+'px';
             document.getElementById('list-desk').style.height = window.innerHeight+'px';
         };
         var tab = function(tab1){
