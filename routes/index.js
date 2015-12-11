@@ -1,6 +1,6 @@
 'use strict';
 var express = require('express');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var router = express.Router();
 
 router.get('/', function (req, res) {
@@ -63,6 +63,9 @@ router.get('/logout', function (req, res) {
     else {
         res.redirect('/');
     }
+});
+router.get('/material', function (req, res) {
+    res.render('material');
 });
 
 module.exports = router;
