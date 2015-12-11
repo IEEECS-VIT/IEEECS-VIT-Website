@@ -638,12 +638,11 @@
                         }
                         var show  = this;
                         tab_name = $(show).data("tab-name");
-                        document.body.className = '';
+                        document.body.className = tab_name;
                         $(this.parentElement).addClass('active').addClass(tab_name);
                         $(active_tab).addClass('no-view');
                         active_tab = '#'+tab_name
                         $(active_tab).removeClass('no-view');
-                        $('#body').addClass(tab_name);
                        /* $(active_tab).fadeOut(function(){
                             var tab_name = $(show).data("tab-name");
 
