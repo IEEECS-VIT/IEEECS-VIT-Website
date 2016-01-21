@@ -42,11 +42,11 @@
 	</div>
 	  <ul class="side-nav" id="mobile-demo">
 		<img  src="../images/cs.jpg" class="side-logo">
-		<li class="tab"><a href="#">Home</a></li>
-		<li class="tab"><a href="#projects">Projects</a></li>
-		<li class="tab"><a href="#events">Events</a></li>
-		<li class="tab"><a href="#team">Team</a></li>
-		<li class="tab"><a href="#contacts">Contact</a></li>
+		<li class="tab"><a href="#" onclick="closer()">Home</a></li>
+		<li class="tab"><a href="#projects" onclick="closer()">Projects</a></li>
+		<li class="tab"><a href="#events" onclick="closer()">Events</a></li>
+		<li class="tab"><a href="#team" onclick="closer()">Team</a></li>
+		<li class="tab"><a href="#contacts" onclick="closer()">Contact</a></li>
 	  </ul>
 	</div>
 </nav>
@@ -367,6 +367,9 @@ Insert the social buttons here
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
 
 <script>
+function closer(){
+ document.getElementById("mobile-demo").style.left = "-250px";	
+}
 $(document).ready(function(){
 	$('.scrollspy').scrollSpy(); 
 	$('.modal-trigger').leanModal({
