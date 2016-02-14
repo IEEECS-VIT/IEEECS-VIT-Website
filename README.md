@@ -1,6 +1,8 @@
 IEEE CS-VIT - Website
 =====================
 
+[![Join the chat at https://gitter.im/IEEECS-VIT/IEEECS-VIT-Website](https://badges.gitter.im/IEEECS-VIT/IEEECS-VIT-Website.svg)](https://gitter.im/IEEECS-VIT/IEEECS-VIT-Website?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 The website for the IEEE Computer Society - VIT Student Chapter
 
 
