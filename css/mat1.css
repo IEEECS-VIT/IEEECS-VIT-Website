@@ -97,37 +97,11 @@ ul li {
     list-style-type: none
 }
 
-.parallax-container {
-    position: relative;
-    overflow: hidden;
-    height: 180px
-}
-
-.parallax {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1
-}
-
-.parallax img {
-    display: none;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    transform: translateX(-50%)
-}
-
 @media only screen and (max-width:992px) {
     .hide-on-med-and-down {
         display: none!important
     }
+
 }
 
 @media only screen and (min-width:993px) {
@@ -900,13 +874,11 @@ summary {
     display: block
 }
 a {
-	color: white;
     background-color: transparent
 }
 a:active,
 a:hover,
 a:visited {
-	color: white;
     outline: 0
 }
 button,
@@ -988,7 +960,7 @@ i {
 .parallax-container {
     position: relative;
     overflow: hidden;
-    height: 320px
+    height: 180px
 }
 .parallax {
     position: absolute;
@@ -1036,6 +1008,12 @@ i {
     .container {
         width: 70%
     }
+    .logo1 {
+	float:left;
+}
+	.logo2 {
+	float:right;
+}
 }
 .container .row {
     margin-left: -0.75rem;
@@ -1140,6 +1118,14 @@ i {
     
     .row .col.push-l1 {
         left: 8.3333333333%
+    }
+
+    .row .col.pull-l2 {
+        right: 16.6666667%
+    }
+    
+    .row .col.push-l2{
+        left: 16.6666667%
     }
     
     .row .col.offset-l4 {
@@ -1453,13 +1439,7 @@ textarea.materialize-textarea {
 .avatar-card h6 {
 	text-align: center;
 }
-
-.bigger{
-	width: 175px;
-	height: 50px;
-	text-align:center;
-	line-height:50px;
-	margin-right:130px;
-	margin-bottom: 25px;
-	margin-left: 130px;
+.center a{
+	padding-left: 1%;
+	padding-right: 1%
 }
