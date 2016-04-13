@@ -1,80 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no"/>
-<meta charset="utf-8">
-<link rel="icon" href="../images/favicon.ico">
-<title>IEEE Computer Society VIT</title>
-  <!-- CSS  -->
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../css/mat1.css" type="text/css" rel="stylesheet" media="screen,projection"/><!--nobody touch this,will change myself-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no"/>
+  <meta charset="utf-8">
+  <link rel="icon" href="../images/favicon.ico">
+  <title>IEEE Computer Society VIT</title>
+    <!-- CSS  -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../static/styles/style1.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.1/css/animsition.min.css" rel="stylesheet">
+    <link href="../css/mat1.css" type="text/css" rel="stylesheet" media="screen,projection"/><!--nobody touch this,will change myself-->
+    <style>
+    @font-face {
+        font-family: 'Aller';
+        src: url('../static/fonts/Aller/Aller_Lt.woff');
+    }
 
-</head>
+    *{
+      font-family: 'Aller';
+      font-size: 20px;
+    }
+    </style>
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="../js/smoothscroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.1/js/animsition.min.js"></script>
+  </head>
+  <body>
+    <!--<div class="image-loader" id="preloader">
+      <div class="rect">
+        <div class="dot d_i"></div>
+        <div class="dot d_ii"></div>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 15 -5" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>-->
 
-<body>
-<div class="parallax-container" style="height:100vh">
-	<div class="parallax">
-
-<img src="../images/background.jpg" style="background-position:center top;height:100vh;"> <!-- Will Change This-->
-</div>
-</div>
+    <div class="first parallax-container z-depth-2" id="first" style="height:100vh">
+	   <div class="parallax">
+       <img src="../images/keyboard.png" id="keyboard" style="background-position:center top;z-index: 0;height:100vh;-webkit-filter: brightness(50%)"> <!-- Will Change This-->
+       <img class="centered" src="../images/logo.gif" id="logo" width="100%" style="z-index: 1;padding-top:10em">
+     </div>
+   </div>
+   <div class="navbar-fixed">
+    <nav id="big-screen-nav">
+      <div class="nav-wrapper hide-on-med-and-down">
+        <div class="container"><div class="row">
+          <div class="col m9" style="position:fixed;">
+            <a href="#" class="brand-logo left"><img src="../images/logo.gif" style="height:32px"></a>
+            <div class="right">
+              <!--<a href="#" class="brand-logo left"><img src="../images/logo.gif" style="height:32px"></a>-->
+              <ul>
+	               <li ><a href="#first"class="sliding-middle-out home-target" style="padding:0 1em 0 1em">Home</a></li>
+	                <li ><a  href="#events"class="sliding-middle-out events-target" style="padding:0 1em 0 1em">Events</a></li>
+	                 <li ><a href="#team" class="sliding-middle-out team-target" style="padding:0 1em 0 1em">Our Team</a></li>
+	                  <li ><a href="#contacts" class="sliding-middle-out contact-target" style="padding:0 1em 0 1em">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+ </div>
  <nav>
-<div class="nav-wrapper hide-on-med-and-down">
-<div class="container"><div class="row">
-<div class="col m3"><a href="#" class="logo"><img src="../images/logo.gif" style="height:32px"></a></div>
-<div class="col m9" style="position:fixed;z-index:0;"><div class="right">
-<ul>
-	<li ><a href="#"class="sliding-middle-out" style="padding:0 1em 0 1em">Home</a></li>
-	<li ><a  href="#events"class="sliding-middle-out" style="padding:0 1em 0 1em">Events</a></li>
-	<li ><a href="#team" class="sliding-middle-out" style="padding:0 1em 0 1em">Our Team</a></li>
-	<li ><a href="#contacts" class="sliding-middle-out" style="padding:0 1em 0 1em">Contact Us</a></li>
-</ul>
-</div></div>
-</div></div>
-</div>
-</nav>
-<nav>
-	<div class="hide-on-large-only">
-	<a href="#" data-activates="mobile-demo" class="button-collapse" style="position:fixed;margin-top:-50px;z-index:999"><i class="material-icons" style="color:black">menu</i></a>
-	<img class="centered" src="../images/logo.gif" width="100%" style="padding-top:10em">
-	</div>
-	  <ul class="side-nav" id="mobile-demo">
-		<img  src="../images/cs1.gif" class="side-logo">
-		<li class="tab"><a href="#" onclick="closer()">Home</a></li>
-		<li class="tab"><a href="#events" onclick="closer()">Events</a></li>
-		<li class="tab"><a href="#team" onclick="closer()">Team</a></li>
-		<li class="tab"><a href="#contacts" onclick="closer()">Contact</a></li>
-	  </ul>
-	</div>
+	  <div class="hide-on-large-only">
+	     <a href="#" data-activates="mobile-demo" class="button-collapse" style="position:fixed;margin-top:-50px;z-index:999"><i class="material-icons" style="color:black">menu</i></a>
+	      <img class="centered" src="../images/logo.gif" width="100%" style="padding-top:10em">
+	      <ul class="side-nav" id="mobile-demo">
+		        <img  src="../images/cs1.gif" class="side-logo">
+		        <li class="tab"><a href="#" onclick="closer()">Home</a></li>
+		        <li class="tab"><a href="#events" onclick="closer()">Events</a></li>
+		        <li class="tab"><a href="#team" onclick="closer()">Team</a></li>
+		        <li class="tab"><a href="#contacts" onclick="closer()">Contact</a></li>
+	      </ul>
+	  </div>
 </nav>
 
 
-<div style="position:relative;z-index:1;" class="section">
-  <div class="row container">
-  
-	  <h2 class="header scrollspy" id="events">Events</h2>
-	  <p class="grey-text text-darken-3 lighten-3">Our famous events have always been the talking points be it gravitas or riviera, come and have a look at what we have for you this time</p>
-
-  <div class="row">
-  
-<div class="col s12 m6 l6 pull-l1">
-  <div class="card medium">
-	<div class="card-image waves-effect waves-block waves-light">
-	  <img class="activator" src="../images/office.jpg">
-	</div>
-	<div class="card-content">
-	  <span class="card-title activator grey-text text-darken-4">Gravitas Primier League<i class="material-icons right">more_vert</i></span>
-	  
-	</div>
-	<div class="card-reveal">
-	  <span class="card-title grey-text text-darken-4">Gravitas Primier League<i class="material-icons right">close</i></span>
-	  <p>Description of event</p>
-	</div>
-  </div>
-  </div>
+  <div style="position:relative;z-index:1;" class="section">
+    <div class="row container">
+	     <h2 class="header scrollspy" id="events">Events</h2>
+	     <p class="grey-text text-darken-3 lighten-3">Our famous events have always been the talking points be it gravitas or riviera, come and have a look at what we have for you this time</p>
+       <div class="row">
+         <div class="col s12 m6 l6 pull-l1">
+         <div class="card medium">
+	        <div class="card-image waves-effect waves-block waves-light">
+	           <img class="activator" src="../images/office.jpg">
+	         </div>
+	        <div class="card-content">
+	           <span class="card-title activator grey-text text-darken-4">Gravitas Primier League<i class="material-icons right">more_vert</i></span>
+	        </div>
+	       <div class="card-reveal">
+	         <span class="card-title grey-text text-darken-4">Gravitas Primier League<i class="material-icons right">close</i></span>
+	         <p>Description of event</p>
+	        </div>
+        </div>
+      </div>
+  <!--<div class="animsition-overlay">
+    <div class=".event-image animsition-link">
+      <img src="../images/office.jpg" style="width: 60%;height: 60%">
+    </div>
+    <div class=".event-data">
+      <span class="card-title grey-text darken-4">GraVITas Premiere League</span>
+      <p>Description</p>
+    </div>
+  </div>-->
 
 <div class="col s12 m6 l6 push-l1">
   <div class="card medium">
@@ -83,7 +124,7 @@
 	</div>
 	<div class="card-content">
 	  <span class="card-title activator grey-text text-darken-4">Jumble Coding<i class="material-icons right">more_vert</i></span>
-	 
+
 	</div>
 	<div class="card-reveal">
 	  <span class="card-title grey-text text-darken-4">Jumble Coding<i class="material-icons right">close</i></span>
@@ -99,7 +140,7 @@
 	</div>
 	<div class="card-content">
 	  <span class="card-title activator grey-text text-darken-4">FTP<i class="material-icons right">more_vert</i></span>
-	  
+
 	</div>
 	<div class="card-reveal">
 	  <span class="card-title grey-text text-darken-4">FTP<i class="material-icons right">close</i></span>
@@ -115,7 +156,7 @@
 	</div>
 	<div class="card-content">
 	  <span class="card-title activator grey-text text-darken-4">Live Monopoly<i class="material-icons right">more_vert</i></span>
-	 
+
 	</div>
 	<div class="card-reveal">
 	  <span class="card-title grey-text text-darken-4">Live Monopoly<i class="material-icons right">close</i></span>
@@ -123,7 +164,7 @@
 	</div>
   </div>
   </div>
-			
+
 
   </div>
 
@@ -136,7 +177,7 @@
 
 <div style="position:relative;z-index:1;" class="section">
   <div class="row container">
-  
+
 	  <h2 class="header scrollspy" id="team">The Team</h2>
 	  <p class="grey-text text-darken-3 lighten-3">The guys and girls who make it all possible</p>
 
@@ -151,7 +192,7 @@
   <div style="z-index:-1;" class="parallax-container">
 	<div class="parallax"><img src="../images/parallax2.jpg"></div>
   </div>
-<footer class="page-footer" id="contacts">
+<footer class="page-footer" id="contact">
     <div class="container">
     <h4>Contact Us</h4>
       <div class="row">
@@ -166,16 +207,53 @@
   </footer>
 
   <!--  Scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-
+<script>
+  /*$(window).load(function(){
+    $(".image-loader").fadeOut('slow');
+    $(".image-loader").css({"visibility": "hidden"});
+  });*/
+  $(document).ready(function(){
+    $('#big-screen-nav').fadeOut(0);
+    //Comment the below line and Uncomment the line inside the callback to see the scrollfire event
+    Materialize.fadeInImage("#logo");
+    Materialize.fadeInImage("#keyboard");
+    $('#big-screen-nav').fadeIn(4000);
+    var options = [
+    {selector: '.first', offset: 900, callback: function() {
+      //$('#big-screen-nav').fadeIn(1500);
+    } },
+  ];
+  Materialize.scrollFire(options);
+  /*$(".animsition-overlay").animsition({
+    inClass: 'overlay-slide-in-right',
+    outClass: 'overlay-slide-out-left',
+    inDuration: 800,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: '.animsition-overlay', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : true,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });*/
+  });
+</script>
 <script>
 function closer(){
- document.getElementById("mobile-demo").style.left = "-250px";	
+ document.getElementById("mobile-demo").style.left = "-250px";
 }
 $(document).ready(function(){
-	$('.scrollspy').scrollSpy(); 
+	$('.scrollspy').scrollSpy();
 	$('.modal-trigger').leanModal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity:0, // Opacity of modal background
@@ -186,7 +264,16 @@ $(document).ready(function(){
  });
 
 </script>
-
+<script>
+$('.home-target').on('click', function() {
+  $.smoothScroll({
+    scrollElement: $('body'),
+    scrollTarget: '#first',
+    speed: 600
+  });
+  return false;
+});
+</script>
 <script src="../js/init.js"></script>
 <script src="../js/images_generate.js"></script>
 </body>

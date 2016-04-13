@@ -815,7 +815,7 @@ body {
 }
 .sliding-middle-out:hover:after {
     width: 100%;
-    background: #000
+    background: #000;
 }
 .avatar-frame1 {
     margin: 0 auto
@@ -1066,33 +1066,33 @@ i {
         left: auto;
         right: auto
     }
-    
+
     .row .col.m4 {
         width: 33.3333333333%;
         margin-left: auto;
         left: auto;
         right: auto
     }
-    
+
     .row .col.m6 {
         width: 50%;
         margin-left: 0
     }
-    
+
     .row .col.m9 {
         width: 75%;
         margin-left: auto;
         left: auto;
         right: auto
     }
-    
+
     .row .col.m12 {
         width: 100%;
         margin-left: auto;
         left: auto;
         right: auto
     }
-    
+
     .row .col.offset-m4 {
         margin-left: 33.3333333333%
     }
@@ -1104,18 +1104,18 @@ i {
         left: auto;
         right: auto
     }
-    
+
     .row .col.l6 {
         width: 50%;
         margin-left: auto;
         left: auto;
         right: auto
     }
-    
+
     .row .col.pull-l1 {
         right: 8.3333333333%
     }
-    
+
     .row .col.push-l1 {
         left: 8.3333333333%
     }
@@ -1123,11 +1123,11 @@ i {
     .row .col.pull-l2 {
         right: 16.6666667%
     }
-    
+
     .row .col.push-l2{
         left: 16.6666667%
     }
-    
+
     .row .col.offset-l4 {
         margin-left: 33.3333333333%
     }
