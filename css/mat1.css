@@ -700,7 +700,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
         width: calc(100% - 3rem)
     }
     .avatar-card {
-    	width: 250px;
+    	width: 200px;
     }
 }
 textarea {
@@ -827,8 +827,8 @@ body {
 .avatar-frame1,
 .avatar-frame1 img {
     margin-bottom: -20px;
-    width: 144px;
-    height: 144px;
+    width: 128px;
+    height: 128px;
     -webkit-border-radius: 120px;
     border-radius: 120px;
     -index: 2;
@@ -1170,7 +1170,7 @@ html {
 }
 @media only screen and (min-width:0) {
     html {
-        font-size: 14px
+        font-size: 14px;
     }
 }
 h6 {
@@ -1434,7 +1434,7 @@ textarea.materialize-textarea {
     border-radius: 2px
     margin-top: -10px;
     z-index: 1
-    width: 50%;
+    width: 10%;
     margin: 0 auto;
     margin-bottom: 20px;
 }
@@ -1496,4 +1496,8 @@ z-index: 999;
 }
 .invert{
     color: black;
+}
+.avatar-card{
+    width: 180px;
+    margin-bottom: 40px
 }
