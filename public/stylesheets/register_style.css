@@ -1,140 +1,133 @@
 html, body {
-    min-height: 100%;
-    width: 100%;
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-    color: white;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: white;
 
 }
 
 .main-container {
-    min-height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
-    text-align: center;
-    background-color: black;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: white;
+  text-align: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+header > h1{
+  font-weight: 900;
+  margin-top: 0;
+
+  transform: translate3d(0px, 0px, 0px);
+  text-transform: lowercase;
+  font-variant: small-caps;
+  color: white;
 }
 
-header > h1 {
-    font-weight: 900;
-    margin-top: 0;
 
-    transform: translate3d(0px, 0px, 0px);
-    text-transform: lowercase;
-    font-variant: small-caps;
-    color: white;
+header > h1 >small{
+  color: white;
+}
+header{
+  padding: 28px;
 }
 
-header > h1 > small {
-    color: white;
+main{
+  margin-left: 12.5%;
+  width: 75%;
 }
 
-header {
-    padding: 28px;
+
+.register-form{
+  background: rgba(230, 230, 230, 0.5);
+  padding: 42px;
+  text-align: left;
+  margin-bottom: 42px;
 }
-
-main {
-    margin-left: 12.5%;
-    width: 75%;
-}
-
-.register-form {
-    background: rgba(230, 230, 230, 0.5);
-    padding: 42px;
-    text-align: left;
-    margin-bottom: 42px;
-}
-
-.register-form .form-control {
-    background: rgba(255, 255, 255, 0.8);
-    font-family: 'Lato', sans-serif;
-
-}
-
-.register-form .form-control {
-    font-family: 'Lato', sans-serif;
+.register-form .form-control{
+  background: rgba(255, 255, 255, 0.8);
+  font-family: 'Lato', sans-serif;
 
 }
 
-footer {
-    margin-top: 18px;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 5px 0 5px 0;
-    text-transform: lowercase;
-    font-variant: small-caps;
+.register-form .form-control{
+  font-family: 'Lato', sans-serif;
+
 }
 
-input[name="reg_no"] {
-    text-transform: uppercase;
+footer{
+  margin-top: 18px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0 5px 0 ;
+  text-transform: lowercase;
+  font-variant: small-caps;
 }
 
-.register-form .white-button-container {
-    border-radius: 4px;
-    border: 1px solid white;
-    color: white;
-    background-color: transparent;
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.2s ease 0s;
+input[name="reg_no"]{
+  text-transform: uppercase;
 }
 
-.white-button-container:hover {
-    background-color: white;
-    color: black;
+.register-form .white-button-container{
+  border-radius: 4px;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease 0s;
 }
 
-.white-button-container:hover .white-button {
-    color: black;
+.white-button-container:hover{
+  background-color: white;
+  color: black;
+}
+.white-button-container:hover .white-button{
+  color: black;
 }
 
-.white-button {
-    text-transform: lowercase;
-    font-variant: small-caps;
-    font-size: 18px;
-    padding: 8px;
+.white-button{
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 18px;
+  padding: 8px;
 }
-
 .white-button:link {
-    color: white;
+	color: white;
 
-    text-decoration: none;
-}
-
+	text-decoration: none;
+	}
 .white-button:visited {
-    color: white;
+	color: white;
 
-    text-decoration: none;
-}
-
+	text-decoration: none;
+	}
 .white-button:hover {
-    color: black;
-    text-decoration: none;
-}
-
+	color: black;
+	text-decoration: none;
+	}
 .white-button:active {
-    color: white;
+	color: white;
 
-    text-decoration: none;
+	text-decoration: none;
+}
+.register-form .text-center{
+  padding-top: 18px;
+  width: 100%;
+  text-align: center;
 }
 
-.register-form .text-center {
-    padding-top: 18px;
-    width: 100%;
-    text-align: center;
-}
-
-label {
-    font-family: arial, sans-serif;
-    text-transform: lowercase;
-    font-variant: small-caps;
+label{
+  font-family: arial, sans-serif;
+  text-transform: lowercase;
+  font-variant: small-caps;
 }

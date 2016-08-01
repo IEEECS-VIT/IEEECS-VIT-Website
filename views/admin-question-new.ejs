@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title> New Question | IEEE CS</title>
+    <script src="/javascript/prefix-free.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css" />
+    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  </head>
+  <body>
+    <div class="container">
+      <% for (var i=0; i<flash.length; i++){ %>
+      <strong> <%= flash[i].message %>  <% flash.shift(); %></strong>
+      <% } %>
+      <div class="row">
+        <div class="six columns">
+            <h2> Technical  </h2>
+            <form method="post" action="/admin/question/new">
+              <input type="hidden" name="category" value="technical" />
+              
+              <label for="question"> Question </label>
+              <textarea id="question" class="u-full-width" name="question"></textarea>
+
+              <ol>
+              <% for (var i=0; i<4; i++) { %>
+                <li class="u-full-width">
+                  <input type="text"  id="option<%=i%>" name="option<%=i%>" />
+                </li>
+              <% } %>
+              </ol>
+
+              <label for="correctOption>">Correct Option </label>
+              <select id="correctOption" name="correctOption" class="u-full-width">
+                <% for (var i=0; i<4; i++) { %>
+                  <option value="<%=i%>"> <%=i+1%> </option>
+                <% } %>
+              </select>
+
+              <input type="submit" class="button-primary"/>
+            </form>
+          </div>
+
+
+          <div class="six columns">
+            <h2> Management  </h2>
+
+            <form method="post" action="/admin/question/new">
+              <input type="hidden" name="category" value="management" />
+              
+              <label for="question"> Question </label>
+              <textarea id="question" class="u-full-width" name="question"></textarea>
+
+              <input type="submit" class="button-primary"/>
+              
+            </form>
+
+
+          </div>
+      </div>
+    
+    
+    </div>
+  </body>
+</html>
+
+
+
+      

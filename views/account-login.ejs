@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Login | IEEE CS</title>
+    <script src="/javascript/prefix-free.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css" />
+    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  </head>
+  <body>
+    <section class="main-container " id="main-container">
+
+    <main>
+
+      <header> <h1><img height="42"src="http://res.cloudinary.com/gpl/general/ieeecs.png"/> <br> Login</h1>  </header>
+
+      <div class="container">
+        <div class="row">
+            <div class="four columns  offset-by-four">
+                <% for (var i=0; i<flash.length; i++){ %>
+                  <strong> <%= flash[i].message %>  <% flash.shift(); %></strong>
+                <% } %>
+
+                <form method="post" action"/account/login"> 
+
+                  <label class="control-label" for="reg_no"> Reg. No. </label>
+                  <input class="u-full-width" name="username" id="reg_no" type="text" />
+
+                  <label class="control-label" for="password"> Password </label>
+                  <input class="u-full-width" name="password" id="password" type="password" /> <br>
+
+                  <input type="submit"  value="Register" class="button-primary u-full-width" / >
+          
+                </form>
+           </div>
+        </div>
+      </div>
+    </main>
+    <footer>&copy; IEEE-CS, VIT Chapter</footer>
+    </section>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+    <script src="/bower_components/trianglify/dist/trianglify.min.js"></script>
+    <script type="text/javascript">
+    //var t = new Trianglify();
+    var pattern = Trianglify({
+      width: screen.width,
+      height: screen.height,
+      cell_size: Math.random()*200 + 40,
+      x_colors: 'random',
+      variance: Math.random(),
+    }).png();
+    //console.log(pattern);
+
+    document.getElementById('main-container').setAttribute('style', 'background-image:  linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('+pattern+')');
+    </script>
+  </body>
+</html>

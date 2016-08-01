@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title> Questions List | IEEE CS</title>
+    <script src="/javascript/prefix-free.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css" />
+    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      .truncate {
+        width: 500px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+          <h1>Questions List</h1>
+          <p> <%= questions.length %> Questions found. </p>
+           
+            <% var count = { technical: 0, management: 0 }; %>
+            <% for (var i=0; i<questions.length; i++) { %>
+            <%   count[questions[i].category] ++; %>
+            <% } %>
+            
+          <p>
+            <%= count['technical'] %> are technical and, <%= count['management'] %> are management.
+          </p>
+
+
+          <ul>
+            <% for (var i=0; i<questions.length; i++) { %>
+                <li class="truncate"> <a href="/admin/question/<%=questions[i]._id%>"> [<%= questions[i].category %>] <%= questions[i].question %> </a> </li>
+            <% } %>
+          </ul>
+        </div>
+    </div>
+
+</body>
+

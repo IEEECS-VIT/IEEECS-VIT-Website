@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title> Question | IEEE CS</title>
+    <script src="/javascript/prefix-free.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/skeleton/css/normalize.css" />
+    <link rel="stylesheet" href="/bower_components/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      strong {
+        background-color: #4CAF50;
+        color: #FFFFFF;
+      }
+    </style>
+
+  </head>
+  <body>
+
+      <div class="container">
+          <h1>Questions Details</h1>
+            <div class="row">
+              <h3> <%= question.question %>  </h3>
+              <p> Submitted by <%= question.submittedBy.name %> </p>
+              <% if (question.category == 'technical') { %>
+                <ul>
+                <% for (var i=0; i<question.options.length; i++) { %>
+                  <% if (question.correctOption == i) { %>
+                  <li> <strong><%= question.options[i] %> </strong> </li>
+                  <% } else { %>
+                  <li> <%= question.options[i] %> </li>
+                  <% }%>
+                <% } %>
+                </ul>
+              <% } %>
+
+            </div>
+        </div>
+      </div>
+
+</body>

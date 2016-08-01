@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "core-committee-selections",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,26 @@
   "dependencies": {
     "async": "^1.4.2",
     "bcrypt": "^0.8.5",
+    "bluebird": "^3.4.1",
     "body-parser": "~1.13.2",
     "bower": "^1.5.3",
     "compression": "^1.6.0",
     "cookie-parser": "^1.3.5",
     "csurf": "^1.8.3",
     "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "express-session": "^1.11.3",
+    "flash": "^1.1.0",
     "mongodb": "^2.0.46",
+    "mongoose": "^4.5.5",
+    "mongoose-error-helper": "0.0.2",
     "morgan": "~1.6.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0",
+    "req-flash": "0.0.3",
     "serve-favicon": "~2.3.0"
   }
 }
