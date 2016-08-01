@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    let s_time = 1446118278417;
+    let s_time = 1450117800000;
     let current_time = new Date().getTime();
     var difference = ((s_time - current_time) / 1000);
     difference = Math.round(difference);
@@ -40,7 +40,7 @@ router.get('/selected', function (req, res) {
   function onFind(err, doc) {
     if(!err && doc){
       doc.toArray(function (err, arr) {
-        console.log(arr);
+        //console.log(arr);
         res.render('selected', {selected : arr});
       })
 
@@ -49,7 +49,7 @@ router.get('/selected', function (req, res) {
       res.redirect('/');
     }
   }
-  let collection = req.db.collection('selected');
+  let collection = req.db.collection('selectedFinal');
 
   collection.find({}, onFind);
 
@@ -63,6 +63,9 @@ router.get('/logout', function (req, res) {
     else {
         res.redirect('/');
     }
+});
+router.get('/material', function (req, res) {
+    res.render('material');
 });
 
 module.exports = router;

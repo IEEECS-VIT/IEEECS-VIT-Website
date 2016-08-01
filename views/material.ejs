@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Material</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/fonts/themify-icons/themify-icons.css" />
+        <style>
+
+            .main{
+                padding: 0!important;
+                margin:0;
+                z-index: 0;
+                box-shadow:inset 0 5px 5px 0 rgba(0,0,0,1)!important;
+            }
+            nav{
+               /* box-shadow:inset 0 -5px 5px 0 rgba(0,0,0,0.3)!important;*/
+            }
+            body,.main-container,.tab,.tab-control,.tab-view{
+                text-align: center;
+                height:100%;
+                position: relative;
+                padding: 0;
+            }
+            .tab-control{
+                position: fixed;
+            }
+            .web{
+                background:rgba(29,202,255,1);
+            }
+            .photoshop{
+                background:#1a237e;
+            }
+            #list-desk .photoshop a{
+                color: white!important;
+            }
+            .git{
+                background: #ffeb3b;
+            }
+            .android{
+                background: #A4C639;
+            }
+            .windows{
+                background: rgba(50,50,50,1);
+                color:white!important;
+            }
+            #list-desk .windows a{
+                color:white!important;
+            }
+            .ios{
+                background: #bcaaa4 ;
+            }
+            .backend{
+                background: #f44336;
+            }
+            #list-desk .backend a{
+                color:white !important;
+            }
+            .tab-view{
+                background:none;
+            }
+            .tab-control{
+                background: grey;
+                padding: 0!important;
+                margin: 0;
+                padding-bottom:5em;
+            }
+            .tab-control ul{
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            .tab-control ul li{
+                padding: 15% 10%;
+                width: 100%!important;
+            }
+            #list-desk{
+                box-shadow:inset -5px 0 4px 0 rgba(0,0,0,0.2);
+            }
+            .tab-control ul li a:hover{
+                color:white;
+            }
+            .tab-control ul li a{
+                color: rgb(220,220,220);
+            }
+            .tab-control ul li.active a{
+                color:rgba(0,0,0,1);
+
+            }
+            .tab-control ul li.active{
+
+                box-shadow:  -10px 5px 5px 5px rgba(0,0,0,0.3),-10px -5px 5px 5px rgba(0,0,0,0.3);
+            }
+            .view{
+                display: block!important;
+            }
+            .no-view{
+                display:none!important;
+            }
+            .tab-btn{
+                width:100%!important;
+            }
+            .tab-btn div{
+                width: 100%!important;
+            }
+            .tab-btn span,.tab-btn i{
+                font-size: 3rem;
+            }
+            .main{
+            }
+            @media screen and (max-width: 900px){
+
+                nav ul{
+                    padding: 0;
+                    margin: 0;
+                    width: 20%!important;
+                }
+                nav ul li{
+                    padding: 15% 0 0 0 !important;
+                    width: 100%!important;
+                }
+                nav ul li a:hover{
+                    color:white;
+                }
+                nav ul li a{
+                    color: rgb(220,220,220);
+                }
+                nav ul li.active a{
+                    color:rgba(0,0,0,1);
+
+                }
+                nav ul li.active{
+
+                    box-shadow: 0 5px 5px 5px rgba(0,0,0,0.3),0 -5px 5px 5px rgba(0,0,0,0.3);
+                }
+                .tab-btn{
+                    width:auto;
+                }
+                .tab-btn div{
+                    width: auto;
+                }
+                .tab-btn span,.tab-btn i{
+                    font-size: 2rem;
+                }
+            }
+
+        </style>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-69244588-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    </head>
+    <body id="body" class="git">
+    <nav class="hide-on-med-and-up  white grey-text text-darken-4 z-depth-1">
+        <a href="#" class="brand-logo  grey-text text-darken-4 ">IEEE-CS</a>
+        <ul id="slide-out" class=" side-nav">
+            <li class="active git"><a href="#!" data-tab-name="git" class="tab-btn"><div><span class="ti-github"></span></div></a></li>
+            <li><a href="#!" data-tab-name="web" class="active tab-btn"><div><i class="small material-icons ">language</i></div></a></li>
+            <li><a href="#!" data-tab-name="android" class="tab-btn"><div><i class="small material-icons">android</i></div></a></li>
+            <li><a href="#!" data-tab-name="windows" class="tab-btn"><div><span class="ti-microsoft-alt"></span></div></a></li>
+            <li><a href="#!" data-tab-name="ios" class="tab-btn"><div><span class="ti-apple"></span></div></a></li>
+            <li><a href="#!" data-tab-name="backend" class="tab-btn"><div><span class="ti-server"></span></div></a></li>
+            <li><a href="#!" data-tab-name="photoshop" class="tab-btn"><div><span>Ps</span></div></a></li>
+        </ul>
+        <a href="http://www.ieeecsvit.com" data-activates="slide-out" class="button-collapse grey-text text-darken-4"><i class="mdi-navigation-menu"></i></a>
+    </nav>
+    <div class="main-container">
+        <div class="row tab" >
+            <div class="col m1 tab-control hide-on-small-only">
+                <ul class="tab" id="list-desk">
+                    <li class="active git"><a href="#!" data-tab-name="git" class="tab-btn"><div><span class="ti-github"></span></div></a></li>
+                    <li><a href="#!" data-tab-name="web" class="active tab-btn"><div><i class="material-icons">language</i></div></a></li>
+                    <li><a href="#!" data-tab-name="android" class="tab-btn"><div><i class=" material-icons">android</i></div></a></li>
+                    <li><a href="#!" data-tab-name="windows" class="tab-btn"><div><span class="ti-microsoft-alt"></span></div></a></li>
+                    <li><a href="#!" data-tab-name="ios" class="tab-btn"><div><span class="ti-apple"></span></div></a></li>
+                    <li><a href="#!" data-tab-name="backend" class="tab-btn"><div><span class="ti-server"></span></div></a></li>
+                    <li><a href="#!" data-tab-name="photoshop" class="tab-btn"><div><span>Ps</span></div></a></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="col m1 hide-on-small-only">asd</div>
+            <div class="col m11 s12 tab-view main" id="main">
+                <div id="git" class="col s12 no-view git data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Git</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Crash Course</span>
+                                    <hr />
+                                    <p>Git is required to work on all of our projects.</p>
+                                    <a href="https://try.github.io/levels/1/challenges/1">Take Crash Course</a>
+                                    <p>Comprehensive guide: <a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git</a> </p>
+                                    <p>Install <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">here</a>.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Github</span>
+                                    <hr />
+                                    <p>It houses all of our projects.</p>
+                                    <a href="https://github.com/IEEECS-VIT/"  target="_blank">IEEE-CS on Github</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="web" class="col s12 no-view web data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Web Development</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">HTML & CSS</span>
+                                    <hr />
+                                    <div class="collection">
+                                        <a href="https://www.codecademy.com/learn/web" class="collection-item"  target="_blank">Tutorial: Codeacademy</a>
+                                        <a href="https://www.youtube.com/watch?v=GnQX230vU4E&list=PLaX-_U-7FjfmwCwYKmzNu-mT211yzVQLZ" class="collection-item"  target="_blank">Project: Stick footer(newboston)</a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Javascript</span>
+                                    <hr />
+                                    <div class="collection">
+                                        <a href="https://www.codecademy.com/learn/javascript" class="collection-item"  target="_blank">Tutorial: Codeacademy</a>
+                                        <a href="https://www.youtube.com/watch?v=KApAJhkkqkA" class="collection-item"  target="_blank">Project: Ping Pong(game-dev)</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">jQuery</span>
+                                    <hr />
+                                    <div class="collection">
+                                        <a href="https://www.codecademy.com/learn/jquery" class="collection-item"  target="_blank">Tutorial: Codeacademy</a>
+                                        <a href="https://www.codecademy.com/skills/make-an-interactive-website" class="collection-item"  target="_blank">Project: Interactive Website(Basic)</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Responsive Frameworks</span>
+                                    <hr />
+                                    <p><a href="https://en.wikipedia.org/wiki/Responsive_web_design"  target="_blank">What is Responsive Web Design?</a> <br />(resize this page from small to big)</p>
+                                    <p><a href="http://www.awwwards.com/what-are-frameworks-22-best-responsive-css-frameworks-for-web-design.html"  target="_blank">What is a framework?</a></p>
+                                    <p>A list of different frameworks that we have used before is below.</p>
+                                    <div class="collection">
+                                        <a href="http://getbootstrap.com/" class="collection-item"  target="_blank">Bootstrap(GPL2)</a>
+                                        <a href="http://foundation.zurb.com/" class="collection-item"  target="_blank">Foundation(GPL1)</a>
+                                        <a href="http://materializecss.com/" class="collection-item"  target="_blank">Materialize(This page)</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Advanced</span>
+                                    <hr />
+                                    <p>These are higher level topics that you might want to look at. Do not attempt unless you have an idea of the stuff above. These are just a few.</p>
+                                    <div class="collection">
+                                        <a href="http://www.tutorialspoint.com/ajax/" class="collection-item"  target="_blank">AJAX(learn with server)</a>
+                                        <a href="https://docs.angularjs.org/tutorial/step_00" class="collection-item"  target="_blank">AngularJS</a>
+                                        <a href="https://facebook.github.io/react/docs/tutorial.html" class="collection-item"  target="_blank">ReactJS</a>
+                                        <a href="http://code.tutsplus.com/tutorials/developing-google-chrome-extensions--net-33076" class="collection-item"  target="_blank">Chrome Extensions</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Software</span>
+                                    <hr />
+                                    <p>Not really required but we work with Webstorm because it has git integrated in it. You can also get Notepad++ with git plugin for the same.</p>
+                                    <div class="collection">
+                                        <a href="https://www.jetbrains.com/webstorm/" class="collection-item"  target="_blank">Webstorm</a>
+                                        <a href="https://notepad-plus-plus.org/" class="collection-item"  target="_blank">Notepad++</a>
+                                        <a href="https://webdeveloperankitakulkarni.wordpress.com/2013/10/19/git-with-notepad/" class="collection-item"  target="_blank">Git Plugin for Notepad++</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="android" class="col s12 no-view android data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Android</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Java</span>
+                                    <hr />
+                                    <p>In case you are not familiar with Java I suggest that you learn the basics of java before diving into hardcore applicaton development. However a thorough knowledge is not required.</p>
+                                    <div class="collection">
+                                        <a href="http://www.tutorialspoint.com/java/java_basic_syntax.htm" class="collection-item"  target="_blank">Tutorial</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Android</span>
+                                    <hr />
+                                    <p>
+                                        It is imperative to code and experiment while going through the videos in order to grasp the concepts.
+                                    </p>
+                                    <div class="collection">
+                                        <a href="https://www.udacity.com/course/viewer#!/c-ud853/l-1395568821/m-1582488682" class="collection-item"  target="_blank">Project: Develop the Sunshine application</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Reference</span>
+                                    <hr />
+                                    <p></p>
+                                    <div class="collection">
+                                        <a href="http://developer.android.com/index.html" class="collection-item"  target="_blank">Android SDK</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Software</span>
+                                    <hr />
+                                    <p></p>
+                                    <div class="collection">
+                                        <a href="http://developer.android.com/sdk/index.html" class="collection-item"  target="_blank">Android Studio</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="windows" class="col s12 no-view windows data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Windows Phone</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Overview</span>
+                                    <hr />
+                                    <p class="grey-text text-darken-4">An important thing when it comes to development (on any platform for that matter) is to first be familiar with the language, before moving on to a platform's specifics. For developing Windows Phone, Store and Desktop apps, C# is a very suitable and highly supported language by Microsoft, hence that's a good choice to start with.</p>
+                                    <p class="grey-text text-darken-4">
+                                        An overall learning path for Windows Store/Phone apps, <b>in order</b>, is suggested below:
+                                    </p>
+                                    <div class="row">
+                                        <div class="col m3 s1 hide-on-small-only"><br /></div>
+                                        <ol class="grey-text text-darken-4 col m6 s11 left-align">
+                                            <li>
+                                                <b>Fundamental C# - </b> data types, syntax, classes, inheritance, generics, methods, collections and string manipulations.
+                                            </li>
+                                            <li>
+                                                <b>Advanced C# - </b> delegates, events, lambdas, pre-processor directives, parallel programming and concurrency, threading, LINQ
+                                            </li>
+                                            <li>
+                                                <b>Store apps basics - </b> XAML, Application lifecycle and overall flow, MVVM, get a little comfortable with XAML by developing small interfaces and backend code
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">C#</span>
+                                    <hr />
+                                    <p></p>
+                                    <div class="collection">
+                                        <a href="https://channel9.msdn.com/Series/C-Sharp-Fundamentals-Development-for-Absolute-Beginners" class="collection-item"  target="_blank">Tutorial</a>
+                                        <a href="http://www.it-ebooks.org/book/oreilly/c_5.0_in_a_nutshell_5th_edition" class="collection-item"  target="_blank">C# 5.0 in a Nutshell</a>
+                                        <a href="http://www.it-ebooks.org/book/oreilly/programming_c_5.0" class="collection-item"  target="_blank">Programming C# 5.0</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Windows Phone</span>
+                                    <hr />
+                                    <p></p>
+                                    <div class="collection">
+                                        <a href="https://channel9.msdn.com/Series/Windows-Phone-8-1-Development-for-Absolute-Beginners" class="collection-item"  target="_blank">Tutorial</a>
+                                        <a href="https://dev.windows.com/en-us" class="collection-item"  target="_blank">Windows Phone Documentation</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Software</span>
+                                    <hr />
+                                    <p class="grey-text text-darken-4">Requires windows 8 and up.</p>
+                                    <div class="collection">
+                                        <a href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx" class="collection-item"  target="_blank">Visual Studio</a>
+                                        <a href="https://www.linqpad.net/" class="collection-item"  target="_blank">LINQPad</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ios" class="col s12 no-view ios data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">iOS</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content" >
+                                    <span class="card-title grey-text text-darken-4">Swift</span>
+                                    <hr />
+                                    <p>Basic tutorial on how to get started.</p>
+                                    <div class="collection">
+                                        <a href="http://www.raywenderlich.com/category/swift" class="collection-item"  target="_blank">Tutorial</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content" >
+                                    <span class="card-title grey-text text-darken-4">More Concepts</span>
+                                    <hr />
+                                    <p>Explore through the list given here. (Suggested: UI concepts)</p>
+                                    <div class="collection">
+                                        <a href="http://www.raywenderlich.com/category/ios" class="collection-item"  target="_blank">List</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content" >
+                                    <span class="card-title grey-text text-darken-4">Software</span>
+                                    <hr />
+                                    <p>This is only for MacBooks.</p>
+                                    <div class="collection">
+                                        <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12&ign-mpt=uo%3D8" class="collection-item"  target="_blank">Xcode</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="backend" class="col s12 no-view backend data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Backend / Server</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Server Side Development</span>
+                                    <hr />
+                                    <p class="grey-text text-darken-4">Don't go with PHP just because it's easy to learn. All of our projects are currently using Node.js.</p>
+                                    <div class="row">
+                                        <div class="col s1 m1 hide-on-small-only"><br /></div>
+                                        <ol class="grey-text text-darken-4 col m11 s12 left-align">
+                                            <li>
+                                                <b>Basics as to how Websites work - </b> client-server model,requests, response, types of requests, MVC Model
+                                            </li>
+                                            <li>
+                                                <b>node.js/Python/Ruby on Rails </b>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Material</span>
+                                    <hr />
+                                    <p></p>
+                                    <div class="collection">
+                                        <a href="http://computer.howstuffworks.com/web-server1.htm" class="collection-item"  target="_blank">Client Server Model</a>
+                                        <a href="http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177" class="collection-item"  target="_blank">Requests and Responses</a>
+                                        <a href="https://www.udemy.com/nodejs-tutorial-from-scratch-by-examples/" class="collection-item"  target="_blank">Node.js</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Software</span>
+                                    <hr />
+                                    <p>Any text editor will do.</p>
+                                    <div class="collection">
+                                        <a href="https://nodejs.org/en/download/" class="collection-item"  target="_blank">Node.js</a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="photoshop" class="col s12 no-view photoshop data">
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Design</span>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content" >
+                                    <span class="card-title grey-text text-darken-4">Adobe Photoshop</span>
+                                    <hr />
+                                    <p>
+                                        If you are new to graphic design, editing and illustration, Photoshop CS6 would be a good editor to start with. Photoshop is good for modifying already created images. It is used to create bitmap images, just a series of pixels.
+                                    </p>
+                                    <div class="collection">
+                                        <a href="http://tv.adobe.com/show/learn-photoshop-cs6/" class="collection-item"  target="_blank">Tutorial</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content" >
+                                    <span class="card-title grey-text text-darken-4">Adobe Illustrator</span>
+                                    <hr />
+                                    <p>
+                                        Adobe Illustrator is for creating vector graphics. Vector graphics will never lose their quality if they are scaled up or down. It is often used to create logos.
+                                    </p>
+                                    <div class="collection">
+                                        <a href="https://helpx.adobe.com/illustrator/tutorials.html" class="collection-item"  target="_blank">Tutorial</a>
+                                        <a href="http://www.awwwards.com/99-creative-logo-designs-for-inspiration.html" class="collection-item"  target="_blank">Sample Designs</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col s12 m4">
+                            <div class="card">
+                                <div class="card-content" >
+                                    <span class="card-title grey-text text-darken-4">Adobe Color</span>
+                                    <hr />
+                                    <p>
+                                        Also, you might find Adobe Color or Adobe Kuler helpful in creating and saving various color schemes.
+                                    </p>
+                                    <div class="collection">
+                                        <a href="https://www.youtube.com/watch?v=FGO6APvYSd4" class="collection-item"  target="_blank">Tutorial</a>
+                                        <a href="https://color.adobe.com/create/color-wheel/" class="collection-item"  target="_blank">Adobe Color</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title grey-text text-darken-4">Software</span>
+                                    <hr />
+                                    <div class="collection">
+                                        <a href="http://www.adobe.com/in/products/photoshop.html" class="collection-item"  target="_blank">Photoshop</a>
+                                        <a href="http://www.adobe.com/in/products/illustrator.html" class="collection-item"  target="_blank">Illustrator</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            $(".button-collapse").sideNav();
+            document.getElementById('list-desk').style.height = window.innerHeight+'px';
+            tab('#git');
+        };
+        window.onresize = function(){
+            document.getElementById('list-desk').style.height = window.innerHeight+'px';
+        };
+        var tab = function(tab1){
+            var a =document.getElementsByClassName('tab-btn');
+            var x;
+            var active_tab = tab1;
+            $(active_tab).removeClass('no-view');
+           //$(active_tab).fadeIn();
+            for (x in a ){
+                a[x].onclick= function () {
+                    if (!hasClass(this.parentElement,'active')) {
+                        var tab_btn = $('.tab-btn');
+                        var tab_name;
+                        for(var i=0;i<tab_btn.length;i++) {
+                            tab_name = tab_btn[i].getAttribute('data-tab-name');
+                            tab_btn[i].parentElement.className = '';
+                        }
+                        var show  = this;
+                        tab_name = $(show).data("tab-name");
+                        document.body.className = tab_name;
+                        $(this.parentElement).addClass('active').addClass(tab_name);
+                        $(active_tab).addClass('no-view');
+                        active_tab = '#'+tab_name
+                        $(active_tab).removeClass('no-view');
+                       /* $(active_tab).fadeOut(function(){
+                            var tab_name = $(show).data("tab-name");
+
+                            //$(active_tab).fadeIn();
+                        });*/
+                    }
+                };
+            }
+        }
+        function hasClass(element, cls) {
+            return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+        }
+    </script>
+    </body>
+</html>

@@ -19,12 +19,15 @@
     </script>
   </head>
   <body ng-app="ResultsApp">
+
 <div class="container" ng-controller="MainController">
+  <br>
   <div class="input-group">
     <span class="input-group-addon" id="addon"><span class="glyphicon glyphicon-search" ></span></span>
     <input type="search" class="form-control" placeholder="Search" aria-describedby="addon" ng-model="searchTxt">
   </div>
-
+  <br>
+<div >
   <table>
     <tr>
       <th>
@@ -40,6 +43,8 @@
         <td ng-bind="s.name | ifEmpty: '' | capitalize"></td>
     </tr>
   </table>
+</div>
+
 </div>
 <script src="/bower_components/angular/angular.min.js"></script>
 <script type="text/javascript">
